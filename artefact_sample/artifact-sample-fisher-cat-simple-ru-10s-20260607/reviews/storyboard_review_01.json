@@ -1,0 +1,39 @@
+{
+  "iteration": 1,
+  "issues": [],
+  "all_issues": [
+    {
+      "severity": "warning",
+      "target": "frame:0",
+      "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, towards the water.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+      "suggestion": ""
+    },
+    {
+      "severity": "warning",
+      "target": "frame:1",
+      "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, looking at the fish.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+      "suggestion": ""
+    },
+    {
+      "severity": "warning",
+      "target": "frame:2",
+      "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Fisherman angled towards the cat, cat angled towards the fish.' and 'Fisherman left-mid, fish center, cat lower-right.', but the image shows him more directly facing the camera and closer to the center, with the cat more to the right.",
+      "suggestion": ""
+    },
+    {
+      "severity": "warning",
+      "target": "segment:0",
+      "problem": "The `end_match_notes` for segment 0 states 'The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.' However, the fisherman's pose and orientation in frame 1 (more front-facing) do not perfectly align with the 'slightly angled away from camera' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+      "suggestion": ""
+    },
+    {
+      "severity": "warning",
+      "target": "segment:1",
+      "problem": "The `end_match_notes` for segment 1 states 'The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.' However, the fisherman's pose and orientation in frame 2 (more front-facing) do not perfectly align with the 'angled towards the cat' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+      "suggestion": ""
+    }
+  ],
+  "blocking_issues": [],
+  "mode": "multimodal",
+  "error": null
+}

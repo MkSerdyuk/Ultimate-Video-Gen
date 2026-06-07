@@ -1,0 +1,122 @@
+{
+  "scene_background": "A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.",
+  "objects": [
+    {
+      "id": "fisherman",
+      "name": "The Fisherman",
+      "appearance": "A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.",
+      "constraints": [
+        "Always seated on a small, portable stool or directly on the bank.",
+        "His fishing rod is always within reach or actively held.",
+        "His attire remains consistent: faded blue vest, worn cap, dark trousers."
+      ],
+      "story_role": "character",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    },
+    {
+      "id": "fishing_rod",
+      "name": "Fishing Rod",
+      "appearance": "A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.",
+      "constraints": [
+        "Always held by the fisherman or resting beside him.",
+        "The line always extends into the water.",
+        "The bobber is always visible on the water's surface until a fish is caught."
+      ],
+      "story_role": "prop",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    },
+    {
+      "id": "fish",
+      "name": "The Caught Fish",
+      "appearance": "A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.",
+      "constraints": [
+        "Always appears wet and alive.",
+        "Its size is consistent: medium, fitting comfortably in a human hand.",
+        "Its color is consistently silver with subtle iridescence."
+      ],
+      "story_role": "prop",
+      "default_visibility": "conditional",
+      "reveal_rules": [
+        "Becomes visible only after the fisherman pulls it from the water."
+      ],
+      "pre_reveal_hints": [
+        "A sudden tug on the fishing line.",
+        "The bobber dipping sharply underwater."
+      ],
+      "hard_exclusions_before_reveal": [
+        "The fish itself must not be visible before it is pulled from the water."
+      ]
+    },
+    {
+      "id": "cat",
+      "name": "The Cat",
+      "appearance": "A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.",
+      "constraints": [
+        "Always black with green eyes.",
+        "Its size is consistent with an average domestic cat.",
+        "Its movements are fluid and feline."
+      ],
+      "story_role": "creature",
+      "default_visibility": "latent",
+      "reveal_rules": [
+        "Becomes visible only after the fish is caught and the fisherman acknowledges its presence."
+      ],
+      "pre_reveal_hints": [
+        "A rustling in the nearby reeds.",
+        "A soft, distant meow.",
+        "A shadow briefly passing at the edge of the frame."
+      ],
+      "hard_exclusions_before_reveal": [
+        "The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction."
+      ]
+    }
+  ],
+  "primary_subject_ids": [
+    "fisherman",
+    "cat"
+  ],
+  "style_guide": {
+    "style": "Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.",
+    "palette": "Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.",
+    "cinematic_intent": "To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.",
+    "camera_language": "Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.",
+    "lighting_logic": "Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.",
+    "continuity_bible": [
+      "The fisherman's position and attire remain unchanged.",
+      "The fishing rod's appearance is consistent.",
+      "The lake background is stable and unchanging.",
+      "The cat's appearance is consistently black with green eyes.",
+      "The caught fish is always silver and wriggling."
+    ],
+    "global_continuity_locks": [
+      "Fixed camera perspective, no movement or cuts.",
+      "Consistent overcast lighting conditions.",
+      "Stable background environment (lake, reeds, distant trees).",
+      "Aspect ratio 16:9."
+    ],
+    "public_continuity_locks": [
+      "Fisherman's attire and general appearance are stable.",
+      "Fishing rod's design and color are consistent.",
+      "Water surface remains calm with subtle reflections."
+    ],
+    "reveal_locked_traits": [
+      "The fish is silver-scaled and wriggling.",
+      "The cat is sleek black with bright green eyes."
+    ],
+    "global_negative": [
+      "Text, logos, watermarks, signatures.",
+      "Extra fingers, warped anatomy, distorted limbs.",
+      "Unstable background details, shifting environmental elements.",
+      "Identity drift for characters or objects.",
+      "Duplicate limbs or objects.",
+      "Any elements that break the fixed camera perspective.",
+      "Harsh shadows or direct sunlight."
+    ]
+  }
+}

@@ -4,8 +4,8 @@ This repository contains two related pieces:
 
 - `video_scene_agent/`: the production video scene agent.
 - `benchmarking/`: a fixed sample benchmark harness and committed benchmark artifacts.
-- `artefact_sample/`: one complete sample generation run with world, storyboard,
-  keyframes, segment video, final video, reviews, and manifest.
+- `artefact_sample/`: complete sample generation runs with world, storyboard,
+  keyframes, segment videos, final videos, reviews, and manifests.
 
 ## Video Scene Agent
 
@@ -65,11 +65,14 @@ See `benchmarking/README.md` for the artifact layout and commands.
 
 ## Artefact Sample
 
-`artefact_sample/` contains one compact complete run copied from the agent's
-runtime artifacts. It can be used to inspect the generated world package,
-storyboard, human-readable storyboard markdown, keyframe anchors, generated
-segment, stitched final video, review outputs, report, and manifest without
-running live generation.
+`artefact_sample/` contains compact complete runs copied from the agent's
+runtime artifacts. The first is a simple one-segment smoke sample; the second is
+a 10-second, two-segment sample generated from a simple Russian prompt: a
+fisherman catches a fish and gives it to a cat that runs up to him, in one scene
+without a camera-angle change. These folders can be used to inspect generated
+world packages, storyboards, human-readable storyboard markdown, keyframe
+anchors, generated segments, stitched final videos, review outputs, reports,
+and manifests without running live generation.
 
 ## Отчет об использовании генеративного ИИ
 

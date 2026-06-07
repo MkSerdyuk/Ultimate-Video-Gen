@@ -1,0 +1,1713 @@
+{
+  "run_id": "artifact-sample-fisher-cat-simple-ru-10s-20260607",
+  "status": "completed",
+  "world": {
+    "scene_background": "A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.",
+    "objects": [
+      {
+        "id": "fisherman",
+        "name": "The Fisherman",
+        "appearance": "A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.",
+        "constraints": [
+          "Always seated on a small, portable stool or directly on the bank.",
+          "His fishing rod is always within reach or actively held.",
+          "His attire remains consistent: faded blue vest, worn cap, dark trousers."
+        ],
+        "story_role": "character",
+        "default_visibility": "always_visible",
+        "reveal_rules": [],
+        "pre_reveal_hints": [],
+        "hard_exclusions_before_reveal": []
+      },
+      {
+        "id": "fishing_rod",
+        "name": "Fishing Rod",
+        "appearance": "A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.",
+        "constraints": [
+          "Always held by the fisherman or resting beside him.",
+          "The line always extends into the water.",
+          "The bobber is always visible on the water's surface until a fish is caught."
+        ],
+        "story_role": "prop",
+        "default_visibility": "always_visible",
+        "reveal_rules": [],
+        "pre_reveal_hints": [],
+        "hard_exclusions_before_reveal": []
+      },
+      {
+        "id": "fish",
+        "name": "The Caught Fish",
+        "appearance": "A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.",
+        "constraints": [
+          "Always appears wet and alive.",
+          "Its size is consistent: medium, fitting comfortably in a human hand.",
+          "Its color is consistently silver with subtle iridescence."
+        ],
+        "story_role": "prop",
+        "default_visibility": "conditional",
+        "reveal_rules": [
+          "Becomes visible only after the fisherman pulls it from the water."
+        ],
+        "pre_reveal_hints": [
+          "A sudden tug on the fishing line.",
+          "The bobber dipping sharply underwater."
+        ],
+        "hard_exclusions_before_reveal": [
+          "The fish itself must not be visible before it is pulled from the water."
+        ]
+      },
+      {
+        "id": "cat",
+        "name": "The Cat",
+        "appearance": "A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.",
+        "constraints": [
+          "Always black with green eyes.",
+          "Its size is consistent with an average domestic cat.",
+          "Its movements are fluid and feline."
+        ],
+        "story_role": "creature",
+        "default_visibility": "latent",
+        "reveal_rules": [
+          "Becomes visible only after the fish is caught and the fisherman acknowledges its presence."
+        ],
+        "pre_reveal_hints": [
+          "A rustling in the nearby reeds.",
+          "A soft, distant meow.",
+          "A shadow briefly passing at the edge of the frame."
+        ],
+        "hard_exclusions_before_reveal": [
+          "The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction."
+        ]
+      }
+    ],
+    "primary_subject_ids": [
+      "fisherman",
+      "cat"
+    ],
+    "style_guide": {
+      "style": "Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.",
+      "palette": "Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.",
+      "cinematic_intent": "To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.",
+      "camera_language": "Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.",
+      "lighting_logic": "Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.",
+      "continuity_bible": [
+        "The fisherman's position and attire remain unchanged.",
+        "The fishing rod's appearance is consistent.",
+        "The lake background is stable and unchanging.",
+        "The cat's appearance is consistently black with green eyes.",
+        "The caught fish is always silver and wriggling."
+      ],
+      "global_continuity_locks": [
+        "Fixed camera perspective, no movement or cuts.",
+        "Consistent overcast lighting conditions.",
+        "Stable background environment (lake, reeds, distant trees).",
+        "Aspect ratio 16:9."
+      ],
+      "public_continuity_locks": [
+        "Fisherman's attire and general appearance are stable.",
+        "Fishing rod's design and color are consistent.",
+        "Water surface remains calm with subtle reflections."
+      ],
+      "reveal_locked_traits": [
+        "The fish is silver-scaled and wriggling.",
+        "The cat is sleek black with bright green eyes."
+      ],
+      "global_negative": [
+        "Text, logos, watermarks, signatures.",
+        "Extra fingers, warped anatomy, distorted limbs.",
+        "Unstable background details, shifting environmental elements.",
+        "Identity drift for characters or objects.",
+        "Duplicate limbs or objects.",
+        "Any elements that break the fixed camera perspective.",
+        "Harsh shadows or direct sunlight."
+      ]
+    }
+  },
+  "storyboard": {
+    "scene_background": "A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.",
+    "objects": [
+      {
+        "id": "fisherman",
+        "name": "The Fisherman",
+        "appearance": "A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.",
+        "constraints": [
+          "Always seated on a small, portable stool or directly on the bank.",
+          "His fishing rod is always within reach or actively held.",
+          "His attire remains consistent: faded blue vest, worn cap, dark trousers."
+        ],
+        "story_role": "character",
+        "default_visibility": "always_visible",
+        "reveal_rules": [],
+        "pre_reveal_hints": [],
+        "hard_exclusions_before_reveal": []
+      },
+      {
+        "id": "fishing_rod",
+        "name": "Fishing Rod",
+        "appearance": "A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.",
+        "constraints": [
+          "Always held by the fisherman or resting beside him.",
+          "The line always extends into the water.",
+          "The bobber is always visible on the water's surface until a fish is caught."
+        ],
+        "story_role": "prop",
+        "default_visibility": "always_visible",
+        "reveal_rules": [],
+        "pre_reveal_hints": [],
+        "hard_exclusions_before_reveal": []
+      },
+      {
+        "id": "fish",
+        "name": "The Caught Fish",
+        "appearance": "A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.",
+        "constraints": [
+          "Always appears wet and alive.",
+          "Its size is consistent: medium, fitting comfortably in a human hand.",
+          "Its color is consistently silver with subtle iridescence."
+        ],
+        "story_role": "prop",
+        "default_visibility": "conditional",
+        "reveal_rules": [
+          "Becomes visible only after the fisherman pulls it from the water."
+        ],
+        "pre_reveal_hints": [
+          "A sudden tug on the fishing line.",
+          "The bobber dipping sharply underwater."
+        ],
+        "hard_exclusions_before_reveal": [
+          "The fish itself must not be visible before it is pulled from the water."
+        ]
+      },
+      {
+        "id": "cat",
+        "name": "The Cat",
+        "appearance": "A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.",
+        "constraints": [
+          "Always black with green eyes.",
+          "Its size is consistent with an average domestic cat.",
+          "Its movements are fluid and feline."
+        ],
+        "story_role": "creature",
+        "default_visibility": "latent",
+        "reveal_rules": [
+          "Becomes visible only after the fish is caught and the fisherman acknowledges its presence."
+        ],
+        "pre_reveal_hints": [
+          "A rustling in the nearby reeds.",
+          "A soft, distant meow.",
+          "A shadow briefly passing at the edge of the frame."
+        ],
+        "hard_exclusions_before_reveal": [
+          "The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction."
+        ]
+      }
+    ],
+    "primary_subject_ids": [
+      "fisherman",
+      "cat"
+    ],
+    "style_guide": {
+      "style": "Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.",
+      "palette": "Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.",
+      "cinematic_intent": "To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.",
+      "camera_language": "Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.",
+      "lighting_logic": "Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.",
+      "continuity_bible": [
+        "The fisherman's position and attire remain unchanged.",
+        "The fishing rod's appearance is consistent.",
+        "The lake background is stable and unchanging.",
+        "The cat's appearance is consistently black with green eyes.",
+        "The caught fish is always silver and wriggling."
+      ],
+      "global_continuity_locks": [
+        "Fixed camera perspective, no movement or cuts.",
+        "Consistent overcast lighting conditions.",
+        "Stable background environment (lake, reeds, distant trees).",
+        "Aspect ratio 16:9."
+      ],
+      "public_continuity_locks": [
+        "Fisherman's attire and general appearance are stable.",
+        "Fishing rod's design and color are consistent.",
+        "Water surface remains calm with subtle reflections."
+      ],
+      "reveal_locked_traits": [
+        "The fish is silver-scaled and wriggling.",
+        "The cat is sleek black with bright green eyes."
+      ],
+      "global_negative": [
+        "Text, logos, watermarks, signatures.",
+        "Extra fingers, warped anatomy, distorted limbs.",
+        "Unstable background details, shifting environmental elements.",
+        "Identity drift for characters or objects.",
+        "Duplicate limbs or objects.",
+        "Any elements that break the fixed camera perspective.",
+        "Harsh shadows or direct sunlight."
+      ]
+    },
+    "story_beats": [
+      {
+        "idx": 0,
+        "id": "beat-00",
+        "label": "Fisherman waits patiently",
+        "narrative_function": "Establish setting and character, build anticipation.",
+        "goal": "Show the fisherman in his element, patiently waiting for a bite.",
+        "emotion": "Patience, tranquility, slight boredom.",
+        "visible_objects": [
+          "fisherman",
+          "fishing_rod",
+          "bobber"
+        ],
+        "latent_objects": [
+          "fish",
+          "cat"
+        ],
+        "allowed_hints": [],
+        "motion_intensity": "low"
+      },
+      {
+        "idx": 1,
+        "id": "beat-01",
+        "label": "Fish caught",
+        "narrative_function": "Introduce conflict/action, reveal the fish.",
+        "goal": "Show the fisherman successfully catching a fish.",
+        "emotion": "Surprise, satisfaction, mild exertion.",
+        "visible_objects": [
+          "fisherman",
+          "fishing_rod",
+          "fish"
+        ],
+        "latent_objects": [
+          "cat"
+        ],
+        "allowed_hints": [
+          "A sudden tug on the fishing line.",
+          "The bobber dipping sharply underwater."
+        ],
+        "motion_intensity": "medium"
+      },
+      {
+        "idx": 2,
+        "id": "beat-03",
+        "label": "Fisherman gives fish to cat",
+        "narrative_function": "Resolve the interaction, show generosity.",
+        "goal": "Show the fisherman offering the fish to the cat.",
+        "emotion": "Generosity, contentment, gratitude (from cat).",
+        "visible_objects": [
+          "fisherman",
+          "fish",
+          "cat"
+        ],
+        "latent_objects": [],
+        "allowed_hints": [],
+        "motion_intensity": "low"
+      }
+    ],
+    "frames": [
+      {
+        "idx": 0,
+        "action_in_frame": "The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.",
+        "camera": "Static medium-wide shot, eye-level.",
+        "lighting": "Soft, diffused natural light, overcast.",
+        "shot_size": "Medium Wide Shot",
+        "camera_angle": "Eye-level",
+        "lens": "Standard",
+        "camera_support": "Tripod",
+        "composition": "Rule of thirds, fisherman slightly off-center, water filling the lower half.",
+        "blocking": "Fisherman seated on the bank, facing the water.",
+        "screen_position": "Fisherman in the left-mid frame, water and bobber in the right-mid frame.",
+        "body_facing": "Slightly angled away from camera, towards the water.",
+        "travel_direction": "Static",
+        "gaze_direction": "Towards the bobber on the water.",
+        "gaze_target": "bobber",
+        "camera_axis_side": "Right",
+        "emotional_beat": "Patience, tranquility",
+        "beat_id": "beat-00",
+        "frame_class": "establishing",
+        "continuity_anchors": [
+          "Fisherman's attire",
+          "Fishing rod",
+          "Calm lake",
+          "Overcast lighting"
+        ],
+        "visible_object_ids": [
+          "fisherman",
+          "fishing_rod",
+          "bobber"
+        ],
+        "hidden_object_ids": [
+          "fish",
+          "cat"
+        ],
+        "hint_object_ids": [],
+        "hero_presence": {
+          "fisherman": "on screen",
+          "cat": "not yet revealed"
+        },
+        "hero_scale": {
+          "fisherman": "medium",
+          "cat": "small_in_frame"
+        },
+        "must_have": [
+          "Fisherman seated",
+          "Fishing rod held",
+          "Bobber on water"
+        ],
+        "negative": [],
+        "image_prompt": "Create a single cinematic keyframe.\nBeat objective: beat-00 / establishing\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.\nWardrobe and props: Fisherman seated; Fishing rod held; Bobber on water\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Rule of thirds, fisherman slightly off-center, water filling the lower half.; Fisherman seated on the bank, facing the water.\nScreen geography: position=Fisherman in the left-mid frame, water and bobber in the right-mid frame.; body_facing=Slightly angled away from camera, towards the water.; travel=Static; gaze=Towards the bobber on the water.; gaze_target=bobber; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'not yet revealed'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small_in_frame'}\nAction and expression: The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.; Patience, tranquility\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Water surface remains calm with subtle reflections.; Calm lake; Overcast lighting\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: The fish itself must not be visible before it is pulled from the water.; The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame.",
+        "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/ef6f739606ff8d79.png",
+        "fix_description": ""
+      },
+      {
+        "idx": 1,
+        "action_in_frame": "The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.",
+        "camera": "Static medium-wide shot, eye-level.",
+        "lighting": "Soft, diffused natural light, overcast.",
+        "shot_size": "Medium Wide Shot",
+        "camera_angle": "Eye-level",
+        "lens": "Standard",
+        "camera_support": "Tripod",
+        "composition": "Fisherman and fish as focal point, slightly off-center.",
+        "blocking": "Fisherman has reeled in, holding the fish up.",
+        "screen_position": "Fisherman in the left-mid frame, fish held higher in the frame.",
+        "body_facing": "Slightly angled away from camera, looking at the fish.",
+        "travel_direction": "Static",
+        "gaze_direction": "Towards the fish.",
+        "gaze_target": "fish",
+        "camera_axis_side": "Right",
+        "emotional_beat": "Satisfaction, mild surprise",
+        "beat_id": "beat-01",
+        "frame_class": "reveal",
+        "continuity_anchors": [
+          "Fisherman's attire",
+          "Fishing rod",
+          "Calm lake",
+          "Overcast lighting"
+        ],
+        "visible_object_ids": [
+          "fisherman",
+          "fishing_rod",
+          "fish"
+        ],
+        "hidden_object_ids": [
+          "cat"
+        ],
+        "hint_object_ids": [],
+        "hero_presence": {
+          "fisherman": "on screen",
+          "cat": "not yet revealed"
+        },
+        "hero_scale": {
+          "fisherman": "medium",
+          "cat": "small_in_frame"
+        },
+        "must_have": [
+          "Fisherman holding fish",
+          "Fish wriggling",
+          "Fishing rod visible"
+        ],
+        "negative": [
+          "no text",
+          "watermarks",
+          "blur",
+          "distortion",
+          "overly dramatic",
+          "stylized elements",
+          "zooms",
+          "pans",
+          "cuts",
+          "harsh shadows",
+          "direct sunlight",
+          "cat visible"
+        ],
+        "image_prompt": "A single cinematic keyframe. The Fisherman, a weathered, middle-aged man with a kind face, wearing a faded blue fishing vest over a blue denim shirt, a worn-out dark grey cap, and practical, dark olive trousers, is seated on the grassy bank of a calm lake. He has a short, neatly trimmed grey beard and a patient demeanor. He is holding a simple, sturdy fishing rod with a dark, slightly scuffed handle, its thin line extending into the water where a small, red-and-white bobber is visible. The setting is a serene, slightly overcast lakeside with soft, diffused natural light, consistent with an overcast day, casting no harsh shadows. The water is calm, reflecting the muted, light grey sky. Reeds and tall grass line the immediate bank in the foreground, with a few distant, indistinct dark green trees on the opposite shore, creating a peaceful and slightly melancholic atmosphere. The overall color palette is muted and naturalistic, with cool tones dominating. The fisherman is in the left-mid frame, slightly angled away from the camera, looking towards the water with a mild, content expression. The shot is a medium wide, eye-level, static shot, captured with a standard lens on a tripod, maintaining a fixed perspective. The aesthetic is grounded and naturalistic, with subtle details and authentic textures, focusing on a quiet, observational moment. The fisherman's attire, fishing rod, calm lake, and overcast lighting are all consistent with previous frames. The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line, his expression one of mild satisfaction. The fish is medium-sized, silver-scaled, appearing wet and alive, with clear, unblinking eyes.",
+        "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/e625badc7be55a3c.png",
+        "fix_description": ""
+      },
+      {
+        "idx": 2,
+        "action_in_frame": "The fisherman gently lowers the wriggling fish towards a sleek black cat, which has approached and is looking up expectantly. The cat is positioned near the fisherman's feet.",
+        "camera": "Static medium-wide shot, eye-level.",
+        "lighting": "Soft, diffused natural light, overcast.",
+        "shot_size": "Medium Wide Shot",
+        "camera_angle": "Eye-level",
+        "lens": "Standard",
+        "camera_support": "Tripod",
+        "composition": "Fisherman, fish, and cat forming a triangular composition, drawing attention to the interaction.",
+        "blocking": "Fisherman leaning slightly forward, cat positioned at his feet, looking up.",
+        "screen_position": "Fisherman left-mid, fish center, cat lower-right.",
+        "body_facing": "Fisherman angled towards the cat, cat angled towards the fish.",
+        "travel_direction": "Static",
+        "gaze_direction": "Fisherman towards cat/fish, cat towards fish.",
+        "gaze_target": "fish",
+        "camera_axis_side": "Right",
+        "emotional_beat": "Generosity, curiosity, anticipation",
+        "beat_id": "beat-03",
+        "frame_class": "aftermath",
+        "continuity_anchors": [
+          "Fisherman's attire",
+          "Fishing rod",
+          "Calm lake",
+          "Overcast lighting",
+          "Silver fish",
+          "Black cat"
+        ],
+        "visible_object_ids": [
+          "fisherman",
+          "fishing_rod",
+          "fish",
+          "cat"
+        ],
+        "hidden_object_ids": [],
+        "hint_object_ids": [],
+        "hero_presence": {
+          "fisherman": "on screen",
+          "cat": "on screen"
+        },
+        "hero_scale": {
+          "fisherman": "medium",
+          "cat": "small"
+        },
+        "must_have": [
+          "Fisherman offering fish",
+          "Cat looking at fish",
+          "Fish visible"
+        ],
+        "negative": [
+          "no text",
+          "no watermarks",
+          "no blur",
+          "no distortion",
+          "no oversaturation",
+          "no harsh lighting",
+          "no direct sunlight",
+          "no stylized elements",
+          "no dramatic effects",
+          "no cartoon",
+          "no painting",
+          "no drawing",
+          "no illustration",
+          "no graphic"
+        ],
+        "image_prompt": "A cinematic medium wide shot, eye-level, of a weathered, middle-aged man, the Fisherman, with a kind face and neatly trimmed beard, wearing a faded blue fishing vest, a worn-out dark cap, and practical dark trousers. He is seated on the grassy bank of a serene, slightly overcast lakeside, leaning slightly forward. His simple, sturdy fishing rod with a dark, slightly scuffed handle is held in his left hand, and he is gently lowering a medium-sized, silver-scaled, wriggling fish, still appearing wet and alive, towards a sleek black cat with bright, curious green eyes and a long, swishing tail. The cat is positioned at his feet, looking up expectantly at the fish. The water is calm, reflecting the muted, overcast sky. Reeds and tall grass line the immediate bank, with distant, indistinct trees on the opposite shore. The composition forms a triangular shape with the fisherman, fish, and cat, drawing attention to their interaction. The fisherman is positioned left-mid, the fish is center, and the cat is lower-right. The fisherman is angled towards the cat and fish, and the cat is angled towards the fish. The lighting is soft, diffused natural light, consistent with an overcast day, with no harsh shadows or direct sunlight, creating an even and gentle illumination that enhances the peaceful and slightly melancholic mood. The color palette consists of muted natural tones: soft greens for the grass and reeds, earthy browns for the bank, and desaturated blues and grays for the sky and water, with a subtle reflective quality on the water's surface. The black cat provides a strong, contrasting element. The overall aesthetic is grounded and naturalistic, with a focus on subtle details and authentic textures, capturing a quiet, observational moment of connection. The camera is static, maintaining a consistent eye-level perspective, with an aspect ratio of 16:9.",
+        "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/de847032eff59d69.png",
+        "fix_description": ""
+      }
+    ],
+    "segments": [
+      {
+        "idx": 0,
+        "start_frame_idx": 0,
+        "end_frame_idx": 1,
+        "duration": 5.0,
+        "transition_text": "The fisherman waits patiently, then feels a tug on his line and reels in a fish.",
+        "camera_move": "Static shot",
+        "subject_motion": "Fisherman's arm moves to reel in the line, then lifts the fish. Bobber dips and disappears.",
+        "environment_motion": "Subtle ripples on the water as the line is pulled.",
+        "screen_direction_rule": "N/A (static camera, subject motion within frame)",
+        "gaze_continuity_rule": "Fisherman's gaze shifts from bobber to the pulled-in fish.",
+        "camera_axis_rule": "Preserve screen axis",
+        "motion_beats": [
+          "Fisherman sits still, watching the bobber.",
+          "Bobber suddenly dips sharply underwater.",
+          "Fisherman reacts, quickly reeling in the line.",
+          "Fisherman lifts the wriggling fish from the water."
+        ],
+        "beat_id": "beat-01",
+        "segment_class": "escalation_bridge",
+        "continuity_anchors": [
+          "Fisherman's attire",
+          "Fishing rod",
+          "Calm lake",
+          "Overcast lighting"
+        ],
+        "visible_object_ids": [
+          "fisherman",
+          "fishing_rod",
+          "bobber",
+          "fish"
+        ],
+        "hidden_object_ids": [
+          "cat"
+        ],
+        "hint_object_ids": [],
+        "visibility_transition": {
+          "persistent": [
+            "fisherman",
+            "fishing_rod"
+          ],
+          "revealed": [
+            "fish"
+          ],
+          "hidden": [
+            "bobber"
+          ],
+          "hinted": []
+        },
+        "hero_presence_transition": {
+          "fisherman": "remains on screen, shifts posture",
+          "cat": "remains not yet revealed"
+        },
+        "entry_exit_actions": [],
+        "offscreen_justification": "",
+        "end_match_notes": "The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.",
+        "video_prompt": "Generate one continuous image-to-video bridge between the provided start and end keyframes.\nBeat objective: beat-01 / escalation_bridge\nClip objective: The fisherman waits patiently, then feels a tug on his line and reels in a fish.\nCamera move: Static shot\nSubject motion: Fisherman's arm moves to reel in the line, then lifts the fish. Bobber dips and disappears.\nEnvironment motion: Subtle ripples on the water as the line is pulled.\nScreen direction continuity: N/A (static camera, subject motion within frame)\nGaze continuity: Fisherman's gaze shifts from bobber to the pulled-in fish.\nCamera axis continuity: Preserve screen axis\nMotion beats: Fisherman sits still, watching the bobber. | Bobber suddenly dips sharply underwater. | Fisherman reacts, quickly reeling in the line. | Fisherman lifts the wriggling fish from the water.\nStart frame anchor: The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.; Medium Wide Shot, Eye-level, Standard\nEnd-state must match: The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nContinuity locks: Fixed camera perspective, no movement or cuts.; Consistent overcast lighting conditions.; Stable background environment (lake, reeds, distant trees).; Aspect ratio 16:9.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting\nVisibility transition: persistent=fisherman, fishing_rod; revealed=fish; hinted=none\nPrimary subject continuity: {'fisherman': 'remains on screen, shifts posture', 'cat': 'remains not yet revealed'}\nEntry / exit actions: No subject exits or entries are planned.\nOff-screen justification: Primary subjects should stay visually accounted for.\nAllowed hints only: No hidden-object hinting in this segment.\nForbidden early reveal: The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nPhysics and tempo: natural timing, stable anatomy, coherent scale, no jumpy interpolation.\nForbidden failures: identity drift, wardrobe drift, unstable background, broken hands, extra limbs, text artifacts, pseudo-cuts, lighting drift, style drift, missed end-frame landing.",
+        "negative": []
+      },
+      {
+        "idx": 1,
+        "start_frame_idx": 1,
+        "end_frame_idx": 2,
+        "duration": 5.0,
+        "transition_text": "The fisherman holds the fish, then a black cat appears and approaches, prompting the fisherman to offer the catch.",
+        "camera_move": "Static shot",
+        "subject_motion": "Cat enters frame from the right, walks towards the fisherman. Fisherman lowers the fish towards the cat.",
+        "environment_motion": "None",
+        "screen_direction_rule": "Cat moves right-to-left towards the fisherman.",
+        "gaze_continuity_rule": "Fisherman's gaze shifts from the fish to the approaching cat, then to the fish as he offers it. Cat's gaze is fixed on the fish.",
+        "camera_axis_rule": "Preserve screen axis",
+        "motion_beats": [
+          "Fisherman holds the wriggling fish, looking at it.",
+          "A sleek black cat subtly enters the frame from the right, moving towards the fisherman's feet.",
+          "Fisherman notices the cat, a slight smile forming.",
+          "Fisherman gently lowers the fish towards the cat, who looks up expectantly."
+        ],
+        "beat_id": "beat-02",
+        "segment_class": "reveal_bridge",
+        "continuity_anchors": [
+          "Fisherman's attire",
+          "Fishing rod",
+          "Calm lake",
+          "Overcast lighting",
+          "Silver fish"
+        ],
+        "visible_object_ids": [
+          "fisherman",
+          "fishing_rod",
+          "fish",
+          "cat"
+        ],
+        "hidden_object_ids": [],
+        "hint_object_ids": [],
+        "visibility_transition": {
+          "persistent": [
+            "fisherman",
+            "fishing_rod",
+            "fish"
+          ],
+          "revealed": [
+            "cat"
+          ],
+          "hidden": [],
+          "hinted": []
+        },
+        "hero_presence_transition": {
+          "fisherman": "remains on screen, shifts posture slightly",
+          "cat": "enters frame from off screen right, moves to on screen"
+        },
+        "entry_exit_actions": [
+          "Cat enters from off screen right."
+        ],
+        "offscreen_justification": "The cat was previously latent, its appearance is a new narrative element.",
+        "end_match_notes": "The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.",
+        "video_prompt": "Generate one continuous image-to-video bridge between the provided start and end keyframes.\nBeat objective: beat-02 / reveal_bridge\nClip objective: The fisherman holds the fish, then a black cat appears and approaches, prompting the fisherman to offer the catch.\nCamera move: Static shot\nSubject motion: Cat enters frame from the right, walks towards the fisherman. Fisherman lowers the fish towards the cat.\nEnvironment motion: None\nScreen direction continuity: Cat moves right-to-left towards the fisherman.\nGaze continuity: Fisherman's gaze shifts from the fish to the approaching cat, then to the fish as he offers it. Cat's gaze is fixed on the fish.\nCamera axis continuity: Preserve screen axis\nMotion beats: Fisherman holds the wriggling fish, looking at it. | A sleek black cat subtly enters the frame from the right, moving towards the fisherman's feet. | Fisherman notices the cat, a slight smile forming. | Fisherman gently lowers the fish towards the cat, who looks up expectantly.\nStart frame anchor: The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.; Medium Wide Shot, Eye-level, Standard\nEnd-state must match: The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nContinuity locks: Fixed camera perspective, no movement or cuts.; Consistent overcast lighting conditions.; Stable background environment (lake, reeds, distant trees).; Aspect ratio 16:9.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting; Silver fish\nVisibility transition: persistent=fisherman, fishing_rod, fish; revealed=cat; hinted=none\nPrimary subject continuity: {'fisherman': 'remains on screen, shifts posture slightly', 'cat': 'enters frame from off screen right, moves to on screen'}\nEntry / exit actions: Cat enters from off screen right.\nOff-screen justification: The cat was previously latent, its appearance is a new narrative element.\nAllowed hints only: No hidden-object hinting in this segment.\nForbidden early reveal: No hidden-object leak.\nPhysics and tempo: natural timing, stable anatomy, coherent scale, no jumpy interpolation.\nForbidden failures: identity drift, wardrobe drift, unstable background, broken hands, extra limbs, text artifacts, pseudo-cuts, lighting drift, style drift, missed end-frame landing.",
+        "negative": []
+      }
+    ]
+  },
+  "frame_uris": [
+    "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/ef6f739606ff8d79.png",
+    "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/e625badc7be55a3c.png",
+    "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/de847032eff59d69.png"
+  ],
+  "segment_uris": [
+    "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/segments/kling-892667792959344721.mp4",
+    "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/segments/kling-892668014289223764.mp4"
+  ],
+  "final_video_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/final_video_artifact-sample-fisher-cat-simple-ru-10s-20260607.mp4",
+  "reviews": {
+    "storyboard": [
+      {
+        "iteration": 1,
+        "issues": [],
+        "all_issues": [
+          {
+            "severity": "warning",
+            "target": "frame:0",
+            "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, towards the water.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "frame:1",
+            "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, looking at the fish.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "frame:2",
+            "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Fisherman angled towards the cat, cat angled towards the fish.' and 'Fisherman left-mid, fish center, cat lower-right.', but the image shows him more directly facing the camera and closer to the center, with the cat more to the right.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "segment:0",
+            "problem": "The `end_match_notes` for segment 0 states 'The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.' However, the fisherman's pose and orientation in frame 1 (more front-facing) do not perfectly align with the 'slightly angled away from camera' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "segment:1",
+            "problem": "The `end_match_notes` for segment 1 states 'The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.' However, the fisherman's pose and orientation in frame 2 (more front-facing) do not perfectly align with the 'angled towards the cat' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+            "suggestion": ""
+          }
+        ],
+        "blocking_issues": [],
+        "mode": "multimodal",
+        "error": null
+      }
+    ],
+    "video": [
+      {
+        "iteration": 1,
+        "issues": [],
+        "all_issues": [
+          {
+            "severity": "warning",
+            "target": "segment:0",
+            "problem": "The bobber does not dip sharply underwater as planned; it simply disappears.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "segment:0",
+            "problem": "The fisherman's gaze does not consistently shift from the bobber to the pulled-in fish. He looks at the camera for a moment.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "segment:1",
+            "problem": "The cat appears abruptly rather than subtly entering the frame.",
+            "suggestion": ""
+          },
+          {
+            "severity": "warning",
+            "target": "segment:1",
+            "problem": "The fisherman's gaze does not consistently shift from the fish to the approaching cat, then to the fish as he offers it. He looks at the camera for a moment.",
+            "suggestion": ""
+          }
+        ],
+        "blocking_issues": [],
+        "mode": "multimodal",
+        "error": null
+      }
+    ]
+  },
+  "provider_metadata": {
+    "director_world": {
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-flash"
+    },
+    "director_storyboard": {
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-flash"
+    },
+    "keyframes_generate": {
+      "provider": "openrouter",
+      "image_model": "google/gemini-2.5-flash-image",
+      "vision_model": "google/gemini-2.5-flash"
+    },
+    "sb_review": {
+      "mode": "multimodal",
+      "error": null,
+      "model": "google/gemini-2.5-flash",
+      "all_issues": [
+        {
+          "severity": "warning",
+          "target": "frame:0",
+          "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, towards the water.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "frame:1",
+          "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Slightly angled away from camera, looking at the fish.' and 'Fisherman in the left-mid frame', but the image shows him more directly facing the camera and closer to the center.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "frame:2",
+          "problem": "The fisherman's body facing and screen position in the image do not perfectly match the prompt. The prompt states 'Fisherman angled towards the cat, cat angled towards the fish.' and 'Fisherman left-mid, fish center, cat lower-right.', but the image shows him more directly facing the camera and closer to the center, with the cat more to the right.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "segment:0",
+          "problem": "The `end_match_notes` for segment 0 states 'The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.' However, the fisherman's pose and orientation in frame 1 (more front-facing) do not perfectly align with the 'slightly angled away from camera' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "segment:1",
+          "problem": "The `end_match_notes` for segment 1 states 'The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.' However, the fisherman's pose and orientation in frame 2 (more front-facing) do not perfectly align with the 'angled towards the cat' instruction in the frame's blocking, which could lead to a mismatch in the generated segment's end state.",
+          "suggestion": ""
+        }
+      ],
+      "blocking_issues": [],
+      "total_issue_count": 5,
+      "blocking_issue_count": 0
+    },
+    "kling_budget": {
+      "provider": "kling",
+      "limit_tokens": 60.0,
+      "spent_tokens": 6.0,
+      "generation_tokens_per_second": 0.6,
+      "edit_tokens_per_second": 0.9,
+      "paid_calls": [
+        {
+          "kind": "generate",
+          "segment_index": 0,
+          "estimated_tokens": 3.0,
+          "spent_after_tokens": 3.0
+        },
+        {
+          "kind": "generate",
+          "segment_index": 1,
+          "estimated_tokens": 3.0,
+          "spent_after_tokens": 6.0
+        }
+      ],
+      "skipped_calls": []
+    },
+    "segments_generate": {
+      "provider": "kling",
+      "model": "kling-v3-omni",
+      "mode": "std",
+      "sound": "off",
+      "task_ids": [
+        "892667792959344721",
+        "892668014289223764"
+      ],
+      "regenerated_indices": [
+        0,
+        1
+      ],
+      "paid_indices": [
+        0,
+        1
+      ],
+      "budget_skipped_indices": [],
+      "placeholder_indices": [],
+      "reused_existing_indices": [],
+      "media_input_urls": [
+        "https://tmpfiles.org/dl/wFw0KHkkImhu/ef6f739606ff8d79.png",
+        "https://tmpfiles.org/dl/wdwcKAkbIq4Y/e625badc7be55a3c.png",
+        "https://tmpfiles.org/dl/wkwoKskeDwAb/de847032eff59d69.png"
+      ]
+    },
+    "stitch_video": {
+      "provider": "ffmpeg",
+      "fps": 24,
+      "segment_count": 2,
+      "placeholder_indices": []
+    },
+    "vid_review": {
+      "mode": "multimodal",
+      "model": "google/gemini-2.5-flash",
+      "video_model": "google/gemini-2.5-flash",
+      "all_issues": [
+        {
+          "severity": "warning",
+          "target": "segment:0",
+          "problem": "The bobber does not dip sharply underwater as planned; it simply disappears.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "segment:0",
+          "problem": "The fisherman's gaze does not consistently shift from the bobber to the pulled-in fish. He looks at the camera for a moment.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "segment:1",
+          "problem": "The cat appears abruptly rather than subtly entering the frame.",
+          "suggestion": ""
+        },
+        {
+          "severity": "warning",
+          "target": "segment:1",
+          "problem": "The fisherman's gaze does not consistently shift from the fish to the approaching cat, then to the fish as he offers it. He looks at the camera for a moment.",
+          "suggestion": ""
+        }
+      ],
+      "blocking_issues": [],
+      "total_issue_count": 4,
+      "blocking_issue_count": 0,
+      "video_metadata": {
+        "width": 1268,
+        "height": 724,
+        "fps": 23.999225231623463,
+        "duration": 10.084,
+        "codec": "h264",
+        "aspect_ratio": "1268:724"
+      }
+    }
+  },
+  "events": [
+    {
+      "ts": "2026-06-07T18:30:42.861183+00:00",
+      "stage": "flow",
+      "action": "started",
+      "asset_kind": "run",
+      "label": "Scene generation run",
+      "indices": [],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:30:52.461079+00:00",
+      "stage": "director_world",
+      "action": "generated",
+      "asset_kind": "world",
+      "label": "World package",
+      "to_value": {
+        "scene_background": "A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.",
+        "objects": [
+          {
+            "id": "fisherman",
+            "name": "The Fisherman",
+            "appearance": "A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.",
+            "constraints": [
+              "Always seated on a small, portable stool or directly on the bank.",
+              "His fishing rod is always within reach or actively held.",
+              "His attire remains consistent: faded blue vest, worn cap, dark trousers."
+            ],
+            "story_role": "character",
+            "default_visibility": "always_visible",
+            "reveal_rules": [],
+            "pre_reveal_hints": [],
+            "hard_exclusions_before_reveal": []
+          },
+          {
+            "id": "fishing_rod",
+            "name": "Fishing Rod",
+            "appearance": "A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.",
+            "constraints": [
+              "Always held by the fisherman or resting beside him.",
+              "The line always extends into the water.",
+              "The bobber is always visible on the water's surface until a fish is caught."
+            ],
+            "story_role": "prop",
+            "default_visibility": "always_visible",
+            "reveal_rules": [],
+            "pre_reveal_hints": [],
+            "hard_exclusions_before_reveal": []
+          },
+          {
+            "id": "fish",
+            "name": "The Caught Fish",
+            "appearance": "A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.",
+            "constraints": [
+              "Always appears wet and alive.",
+              "Its size is consistent: medium, fitting comfortably in a human hand.",
+              "Its color is consistently silver with subtle iridescence."
+            ],
+            "story_role": "prop",
+            "default_visibility": "conditional",
+            "reveal_rules": [
+              "Becomes visible only after the fisherman pulls it from the water."
+            ],
+            "pre_reveal_hints": [
+              "A sudden tug on the fishing line.",
+              "The bobber dipping sharply underwater."
+            ],
+            "hard_exclusions_before_reveal": [
+              "The fish itself must not be visible before it is pulled from the water."
+            ]
+          },
+          {
+            "id": "cat",
+            "name": "The Cat",
+            "appearance": "A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.",
+            "constraints": [
+              "Always black with green eyes.",
+              "Its size is consistent with an average domestic cat.",
+              "Its movements are fluid and feline."
+            ],
+            "story_role": "creature",
+            "default_visibility": "latent",
+            "reveal_rules": [
+              "Becomes visible only after the fish is caught and the fisherman acknowledges its presence."
+            ],
+            "pre_reveal_hints": [
+              "A rustling in the nearby reeds.",
+              "A soft, distant meow.",
+              "A shadow briefly passing at the edge of the frame."
+            ],
+            "hard_exclusions_before_reveal": [
+              "The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction."
+            ]
+          }
+        ],
+        "primary_subject_ids": [
+          "fisherman",
+          "cat"
+        ],
+        "style_guide": {
+          "style": "Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.",
+          "palette": "Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.",
+          "cinematic_intent": "To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.",
+          "camera_language": "Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.",
+          "lighting_logic": "Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.",
+          "continuity_bible": [
+            "The fisherman's position and attire remain unchanged.",
+            "The fishing rod's appearance is consistent.",
+            "The lake background is stable and unchanging.",
+            "The cat's appearance is consistently black with green eyes.",
+            "The caught fish is always silver and wriggling."
+          ],
+          "global_continuity_locks": [
+            "Fixed camera perspective, no movement or cuts.",
+            "Consistent overcast lighting conditions.",
+            "Stable background environment (lake, reeds, distant trees).",
+            "Aspect ratio 16:9."
+          ],
+          "public_continuity_locks": [
+            "Fisherman's attire and general appearance are stable.",
+            "Fishing rod's design and color are consistent.",
+            "Water surface remains calm with subtle reflections."
+          ],
+          "reveal_locked_traits": [
+            "The fish is silver-scaled and wriggling.",
+            "The cat is sleek black with bright green eyes."
+          ],
+          "global_negative": [
+            "Text, logos, watermarks, signatures.",
+            "Extra fingers, warped anatomy, distorted limbs.",
+            "Unstable background details, shifting environmental elements.",
+            "Identity drift for characters or objects.",
+            "Duplicate limbs or objects.",
+            "Any elements that break the fixed camera perspective.",
+            "Harsh shadows or direct sunlight."
+          ]
+        }
+      },
+      "indices": [],
+      "counts": {
+        "objects": 4
+      },
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:31:12.960157+00:00",
+      "stage": "director_storyboard",
+      "action": "generated",
+      "asset_kind": "storyboard",
+      "label": "Storyboard",
+      "to_value": {
+        "scene_background": "A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.",
+        "objects": [
+          {
+            "id": "fisherman",
+            "name": "The Fisherman",
+            "appearance": "A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.",
+            "constraints": [
+              "Always seated on a small, portable stool or directly on the bank.",
+              "His fishing rod is always within reach or actively held.",
+              "His attire remains consistent: faded blue vest, worn cap, dark trousers."
+            ],
+            "story_role": "character",
+            "default_visibility": "always_visible",
+            "reveal_rules": [],
+            "pre_reveal_hints": [],
+            "hard_exclusions_before_reveal": []
+          },
+          {
+            "id": "fishing_rod",
+            "name": "Fishing Rod",
+            "appearance": "A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.",
+            "constraints": [
+              "Always held by the fisherman or resting beside him.",
+              "The line always extends into the water.",
+              "The bobber is always visible on the water's surface until a fish is caught."
+            ],
+            "story_role": "prop",
+            "default_visibility": "always_visible",
+            "reveal_rules": [],
+            "pre_reveal_hints": [],
+            "hard_exclusions_before_reveal": []
+          },
+          {
+            "id": "fish",
+            "name": "The Caught Fish",
+            "appearance": "A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.",
+            "constraints": [
+              "Always appears wet and alive.",
+              "Its size is consistent: medium, fitting comfortably in a human hand.",
+              "Its color is consistently silver with subtle iridescence."
+            ],
+            "story_role": "prop",
+            "default_visibility": "conditional",
+            "reveal_rules": [
+              "Becomes visible only after the fisherman pulls it from the water."
+            ],
+            "pre_reveal_hints": [
+              "A sudden tug on the fishing line.",
+              "The bobber dipping sharply underwater."
+            ],
+            "hard_exclusions_before_reveal": [
+              "The fish itself must not be visible before it is pulled from the water."
+            ]
+          },
+          {
+            "id": "cat",
+            "name": "The Cat",
+            "appearance": "A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.",
+            "constraints": [
+              "Always black with green eyes.",
+              "Its size is consistent with an average domestic cat.",
+              "Its movements are fluid and feline."
+            ],
+            "story_role": "creature",
+            "default_visibility": "latent",
+            "reveal_rules": [
+              "Becomes visible only after the fish is caught and the fisherman acknowledges its presence."
+            ],
+            "pre_reveal_hints": [
+              "A rustling in the nearby reeds.",
+              "A soft, distant meow.",
+              "A shadow briefly passing at the edge of the frame."
+            ],
+            "hard_exclusions_before_reveal": [
+              "The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction."
+            ]
+          }
+        ],
+        "primary_subject_ids": [
+          "fisherman",
+          "cat"
+        ],
+        "style_guide": {
+          "style": "Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.",
+          "palette": "Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.",
+          "cinematic_intent": "To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.",
+          "camera_language": "Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.",
+          "lighting_logic": "Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.",
+          "continuity_bible": [
+            "The fisherman's position and attire remain unchanged.",
+            "The fishing rod's appearance is consistent.",
+            "The lake background is stable and unchanging.",
+            "The cat's appearance is consistently black with green eyes.",
+            "The caught fish is always silver and wriggling."
+          ],
+          "global_continuity_locks": [
+            "Fixed camera perspective, no movement or cuts.",
+            "Consistent overcast lighting conditions.",
+            "Stable background environment (lake, reeds, distant trees).",
+            "Aspect ratio 16:9."
+          ],
+          "public_continuity_locks": [
+            "Fisherman's attire and general appearance are stable.",
+            "Fishing rod's design and color are consistent.",
+            "Water surface remains calm with subtle reflections."
+          ],
+          "reveal_locked_traits": [
+            "The fish is silver-scaled and wriggling.",
+            "The cat is sleek black with bright green eyes."
+          ],
+          "global_negative": [
+            "Text, logos, watermarks, signatures.",
+            "Extra fingers, warped anatomy, distorted limbs.",
+            "Unstable background details, shifting environmental elements.",
+            "Identity drift for characters or objects.",
+            "Duplicate limbs or objects.",
+            "Any elements that break the fixed camera perspective.",
+            "Harsh shadows or direct sunlight."
+          ]
+        },
+        "story_beats": [
+          {
+            "idx": 0,
+            "id": "beat-00",
+            "label": "Fisherman waits patiently",
+            "narrative_function": "Establish setting and character, build anticipation.",
+            "goal": "Show the fisherman in his element, patiently waiting for a bite.",
+            "emotion": "Patience, tranquility, slight boredom.",
+            "visible_objects": [
+              "fisherman",
+              "fishing_rod",
+              "bobber"
+            ],
+            "latent_objects": [
+              "fish",
+              "cat"
+            ],
+            "allowed_hints": [],
+            "motion_intensity": "low"
+          },
+          {
+            "idx": 1,
+            "id": "beat-01",
+            "label": "Fish caught",
+            "narrative_function": "Introduce conflict/action, reveal the fish.",
+            "goal": "Show the fisherman successfully catching a fish.",
+            "emotion": "Surprise, satisfaction, mild exertion.",
+            "visible_objects": [
+              "fisherman",
+              "fishing_rod",
+              "fish"
+            ],
+            "latent_objects": [
+              "cat"
+            ],
+            "allowed_hints": [
+              "A sudden tug on the fishing line.",
+              "The bobber dipping sharply underwater."
+            ],
+            "motion_intensity": "medium"
+          },
+          {
+            "idx": 2,
+            "id": "beat-03",
+            "label": "Fisherman gives fish to cat",
+            "narrative_function": "Resolve the interaction, show generosity.",
+            "goal": "Show the fisherman offering the fish to the cat.",
+            "emotion": "Generosity, contentment, gratitude (from cat).",
+            "visible_objects": [
+              "fisherman",
+              "fish",
+              "cat"
+            ],
+            "latent_objects": [],
+            "allowed_hints": [],
+            "motion_intensity": "low"
+          }
+        ],
+        "frames": [
+          {
+            "idx": 0,
+            "action_in_frame": "The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.",
+            "camera": "Static medium-wide shot, eye-level.",
+            "lighting": "Soft, diffused natural light, overcast.",
+            "shot_size": "Medium Wide Shot",
+            "camera_angle": "Eye-level",
+            "lens": "Standard",
+            "camera_support": "Tripod",
+            "composition": "Rule of thirds, fisherman slightly off-center, water filling the lower half.",
+            "blocking": "Fisherman seated on the bank, facing the water.",
+            "screen_position": "Fisherman in the left-mid frame, water and bobber in the right-mid frame.",
+            "body_facing": "Slightly angled away from camera, towards the water.",
+            "travel_direction": "Static",
+            "gaze_direction": "Towards the bobber on the water.",
+            "gaze_target": "bobber",
+            "camera_axis_side": "Right",
+            "emotional_beat": "Patience, tranquility",
+            "beat_id": "beat-00",
+            "frame_class": "establishing",
+            "continuity_anchors": [
+              "Fisherman's attire",
+              "Fishing rod",
+              "Calm lake",
+              "Overcast lighting"
+            ],
+            "visible_object_ids": [
+              "fisherman",
+              "fishing_rod",
+              "bobber"
+            ],
+            "hidden_object_ids": [
+              "fish",
+              "cat"
+            ],
+            "hint_object_ids": [],
+            "hero_presence": {
+              "fisherman": "on screen",
+              "cat": "not yet revealed"
+            },
+            "hero_scale": {
+              "fisherman": "medium",
+              "cat": "small_in_frame"
+            },
+            "must_have": [
+              "Fisherman seated",
+              "Fishing rod held",
+              "Bobber on water"
+            ],
+            "negative": [],
+            "image_prompt": "Create a single cinematic keyframe.\nBeat objective: beat-00 / establishing\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.\nWardrobe and props: Fisherman seated; Fishing rod held; Bobber on water\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Rule of thirds, fisherman slightly off-center, water filling the lower half.; Fisherman seated on the bank, facing the water.\nScreen geography: position=Fisherman in the left-mid frame, water and bobber in the right-mid frame.; body_facing=Slightly angled away from camera, towards the water.; travel=Static; gaze=Towards the bobber on the water.; gaze_target=bobber; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'not yet revealed'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small_in_frame'}\nAction and expression: The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.; Patience, tranquility\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Water surface remains calm with subtle reflections.; Calm lake; Overcast lighting\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: The fish itself must not be visible before it is pulled from the water.; The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame.",
+            "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/ef6f739606ff8d79.png",
+            "fix_description": ""
+          },
+          {
+            "idx": 1,
+            "action_in_frame": "The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.",
+            "camera": "Static medium-wide shot, eye-level.",
+            "lighting": "Soft, diffused natural light, overcast.",
+            "shot_size": "Medium Wide Shot",
+            "camera_angle": "Eye-level",
+            "lens": "Standard",
+            "camera_support": "Tripod",
+            "composition": "Fisherman and fish as focal point, slightly off-center.",
+            "blocking": "Fisherman has reeled in, holding the fish up.",
+            "screen_position": "Fisherman in the left-mid frame, fish held higher in the frame.",
+            "body_facing": "Slightly angled away from camera, looking at the fish.",
+            "travel_direction": "Static",
+            "gaze_direction": "Towards the fish.",
+            "gaze_target": "fish",
+            "camera_axis_side": "Right",
+            "emotional_beat": "Satisfaction, mild surprise",
+            "beat_id": "beat-01",
+            "frame_class": "reveal",
+            "continuity_anchors": [
+              "Fisherman's attire",
+              "Fishing rod",
+              "Calm lake",
+              "Overcast lighting"
+            ],
+            "visible_object_ids": [
+              "fisherman",
+              "fishing_rod",
+              "fish"
+            ],
+            "hidden_object_ids": [
+              "cat"
+            ],
+            "hint_object_ids": [],
+            "hero_presence": {
+              "fisherman": "on screen",
+              "cat": "not yet revealed"
+            },
+            "hero_scale": {
+              "fisherman": "medium",
+              "cat": "small_in_frame"
+            },
+            "must_have": [
+              "Fisherman holding fish",
+              "Fish wriggling",
+              "Fishing rod visible"
+            ],
+            "negative": [
+              "no text",
+              "watermarks",
+              "blur",
+              "distortion",
+              "overly dramatic",
+              "stylized elements",
+              "zooms",
+              "pans",
+              "cuts",
+              "harsh shadows",
+              "direct sunlight",
+              "cat visible"
+            ],
+            "image_prompt": "A single cinematic keyframe. The Fisherman, a weathered, middle-aged man with a kind face, wearing a faded blue fishing vest over a blue denim shirt, a worn-out dark grey cap, and practical, dark olive trousers, is seated on the grassy bank of a calm lake. He has a short, neatly trimmed grey beard and a patient demeanor. He is holding a simple, sturdy fishing rod with a dark, slightly scuffed handle, its thin line extending into the water where a small, red-and-white bobber is visible. The setting is a serene, slightly overcast lakeside with soft, diffused natural light, consistent with an overcast day, casting no harsh shadows. The water is calm, reflecting the muted, light grey sky. Reeds and tall grass line the immediate bank in the foreground, with a few distant, indistinct dark green trees on the opposite shore, creating a peaceful and slightly melancholic atmosphere. The overall color palette is muted and naturalistic, with cool tones dominating. The fisherman is in the left-mid frame, slightly angled away from the camera, looking towards the water with a mild, content expression. The shot is a medium wide, eye-level, static shot, captured with a standard lens on a tripod, maintaining a fixed perspective. The aesthetic is grounded and naturalistic, with subtle details and authentic textures, focusing on a quiet, observational moment. The fisherman's attire, fishing rod, calm lake, and overcast lighting are all consistent with previous frames. The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line, his expression one of mild satisfaction. The fish is medium-sized, silver-scaled, appearing wet and alive, with clear, unblinking eyes.",
+            "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/e625badc7be55a3c.png",
+            "fix_description": ""
+          },
+          {
+            "idx": 2,
+            "action_in_frame": "The fisherman gently lowers the wriggling fish towards a sleek black cat, which has approached and is looking up expectantly. The cat is positioned near the fisherman's feet.",
+            "camera": "Static medium-wide shot, eye-level.",
+            "lighting": "Soft, diffused natural light, overcast.",
+            "shot_size": "Medium Wide Shot",
+            "camera_angle": "Eye-level",
+            "lens": "Standard",
+            "camera_support": "Tripod",
+            "composition": "Fisherman, fish, and cat forming a triangular composition, drawing attention to the interaction.",
+            "blocking": "Fisherman leaning slightly forward, cat positioned at his feet, looking up.",
+            "screen_position": "Fisherman left-mid, fish center, cat lower-right.",
+            "body_facing": "Fisherman angled towards the cat, cat angled towards the fish.",
+            "travel_direction": "Static",
+            "gaze_direction": "Fisherman towards cat/fish, cat towards fish.",
+            "gaze_target": "fish",
+            "camera_axis_side": "Right",
+            "emotional_beat": "Generosity, curiosity, anticipation",
+            "beat_id": "beat-03",
+            "frame_class": "aftermath",
+            "continuity_anchors": [
+              "Fisherman's attire",
+              "Fishing rod",
+              "Calm lake",
+              "Overcast lighting",
+              "Silver fish",
+              "Black cat"
+            ],
+            "visible_object_ids": [
+              "fisherman",
+              "fishing_rod",
+              "fish",
+              "cat"
+            ],
+            "hidden_object_ids": [],
+            "hint_object_ids": [],
+            "hero_presence": {
+              "fisherman": "on screen",
+              "cat": "on screen"
+            },
+            "hero_scale": {
+              "fisherman": "medium",
+              "cat": "small"
+            },
+            "must_have": [
+              "Fisherman offering fish",
+              "Cat looking at fish",
+              "Fish visible"
+            ],
+            "negative": [
+              "no text",
+              "no watermarks",
+              "no blur",
+              "no distortion",
+              "no oversaturation",
+              "no harsh lighting",
+              "no direct sunlight",
+              "no stylized elements",
+              "no dramatic effects",
+              "no cartoon",
+              "no painting",
+              "no drawing",
+              "no illustration",
+              "no graphic"
+            ],
+            "image_prompt": "A cinematic medium wide shot, eye-level, of a weathered, middle-aged man, the Fisherman, with a kind face and neatly trimmed beard, wearing a faded blue fishing vest, a worn-out dark cap, and practical dark trousers. He is seated on the grassy bank of a serene, slightly overcast lakeside, leaning slightly forward. His simple, sturdy fishing rod with a dark, slightly scuffed handle is held in his left hand, and he is gently lowering a medium-sized, silver-scaled, wriggling fish, still appearing wet and alive, towards a sleek black cat with bright, curious green eyes and a long, swishing tail. The cat is positioned at his feet, looking up expectantly at the fish. The water is calm, reflecting the muted, overcast sky. Reeds and tall grass line the immediate bank, with distant, indistinct trees on the opposite shore. The composition forms a triangular shape with the fisherman, fish, and cat, drawing attention to their interaction. The fisherman is positioned left-mid, the fish is center, and the cat is lower-right. The fisherman is angled towards the cat and fish, and the cat is angled towards the fish. The lighting is soft, diffused natural light, consistent with an overcast day, with no harsh shadows or direct sunlight, creating an even and gentle illumination that enhances the peaceful and slightly melancholic mood. The color palette consists of muted natural tones: soft greens for the grass and reeds, earthy browns for the bank, and desaturated blues and grays for the sky and water, with a subtle reflective quality on the water's surface. The black cat provides a strong, contrasting element. The overall aesthetic is grounded and naturalistic, with a focus on subtle details and authentic textures, capturing a quiet, observational moment of connection. The camera is static, maintaining a consistent eye-level perspective, with an aspect ratio of 16:9.",
+            "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/de847032eff59d69.png",
+            "fix_description": ""
+          }
+        ],
+        "segments": [
+          {
+            "idx": 0,
+            "start_frame_idx": 0,
+            "end_frame_idx": 1,
+            "duration": 5.0,
+            "transition_text": "The fisherman waits patiently, then feels a tug on his line and reels in a fish.",
+            "camera_move": "Static shot",
+            "subject_motion": "Fisherman's arm moves to reel in the line, then lifts the fish. Bobber dips and disappears.",
+            "environment_motion": "Subtle ripples on the water as the line is pulled.",
+            "screen_direction_rule": "N/A (static camera, subject motion within frame)",
+            "gaze_continuity_rule": "Fisherman's gaze shifts from bobber to the pulled-in fish.",
+            "camera_axis_rule": "Preserve screen axis",
+            "motion_beats": [
+              "Fisherman sits still, watching the bobber.",
+              "Bobber suddenly dips sharply underwater.",
+              "Fisherman reacts, quickly reeling in the line.",
+              "Fisherman lifts the wriggling fish from the water."
+            ],
+            "beat_id": "beat-01",
+            "segment_class": "escalation_bridge",
+            "continuity_anchors": [
+              "Fisherman's attire",
+              "Fishing rod",
+              "Calm lake",
+              "Overcast lighting"
+            ],
+            "visible_object_ids": [
+              "fisherman",
+              "fishing_rod",
+              "bobber",
+              "fish"
+            ],
+            "hidden_object_ids": [
+              "cat"
+            ],
+            "hint_object_ids": [],
+            "visibility_transition": {
+              "persistent": [
+                "fisherman",
+                "fishing_rod"
+              ],
+              "revealed": [
+                "fish"
+              ],
+              "hidden": [
+                "bobber"
+              ],
+              "hinted": []
+            },
+            "hero_presence_transition": {
+              "fisherman": "remains on screen, shifts posture",
+              "cat": "remains not yet revealed"
+            },
+            "entry_exit_actions": [],
+            "offscreen_justification": "",
+            "end_match_notes": "The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.",
+            "video_prompt": "Generate one continuous image-to-video bridge between the provided start and end keyframes.\nBeat objective: beat-01 / escalation_bridge\nClip objective: The fisherman waits patiently, then feels a tug on his line and reels in a fish.\nCamera move: Static shot\nSubject motion: Fisherman's arm moves to reel in the line, then lifts the fish. Bobber dips and disappears.\nEnvironment motion: Subtle ripples on the water as the line is pulled.\nScreen direction continuity: N/A (static camera, subject motion within frame)\nGaze continuity: Fisherman's gaze shifts from bobber to the pulled-in fish.\nCamera axis continuity: Preserve screen axis\nMotion beats: Fisherman sits still, watching the bobber. | Bobber suddenly dips sharply underwater. | Fisherman reacts, quickly reeling in the line. | Fisherman lifts the wriggling fish from the water.\nStart frame anchor: The fisherman sits patiently by the lake, holding his fishing rod with the bobber visible on the calm water.; Medium Wide Shot, Eye-level, Standard\nEnd-state must match: The fisherman is holding the fish up, having just pulled it from the water, matching the pose in frame 1.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nContinuity locks: Fixed camera perspective, no movement or cuts.; Consistent overcast lighting conditions.; Stable background environment (lake, reeds, distant trees).; Aspect ratio 16:9.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting\nVisibility transition: persistent=fisherman, fishing_rod; revealed=fish; hinted=none\nPrimary subject continuity: {'fisherman': 'remains on screen, shifts posture', 'cat': 'remains not yet revealed'}\nEntry / exit actions: No subject exits or entries are planned.\nOff-screen justification: Primary subjects should stay visually accounted for.\nAllowed hints only: No hidden-object hinting in this segment.\nForbidden early reveal: The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nPhysics and tempo: natural timing, stable anatomy, coherent scale, no jumpy interpolation.\nForbidden failures: identity drift, wardrobe drift, unstable background, broken hands, extra limbs, text artifacts, pseudo-cuts, lighting drift, style drift, missed end-frame landing.",
+            "negative": [],
+            "result_uri": null
+          },
+          {
+            "idx": 1,
+            "start_frame_idx": 1,
+            "end_frame_idx": 2,
+            "duration": 5.0,
+            "transition_text": "The fisherman holds the fish, then a black cat appears and approaches, prompting the fisherman to offer the catch.",
+            "camera_move": "Static shot",
+            "subject_motion": "Cat enters frame from the right, walks towards the fisherman. Fisherman lowers the fish towards the cat.",
+            "environment_motion": "None",
+            "screen_direction_rule": "Cat moves right-to-left towards the fisherman.",
+            "gaze_continuity_rule": "Fisherman's gaze shifts from the fish to the approaching cat, then to the fish as he offers it. Cat's gaze is fixed on the fish.",
+            "camera_axis_rule": "Preserve screen axis",
+            "motion_beats": [
+              "Fisherman holds the wriggling fish, looking at it.",
+              "A sleek black cat subtly enters the frame from the right, moving towards the fisherman's feet.",
+              "Fisherman notices the cat, a slight smile forming.",
+              "Fisherman gently lowers the fish towards the cat, who looks up expectantly."
+            ],
+            "beat_id": "beat-02",
+            "segment_class": "reveal_bridge",
+            "continuity_anchors": [
+              "Fisherman's attire",
+              "Fishing rod",
+              "Calm lake",
+              "Overcast lighting",
+              "Silver fish"
+            ],
+            "visible_object_ids": [
+              "fisherman",
+              "fishing_rod",
+              "fish",
+              "cat"
+            ],
+            "hidden_object_ids": [],
+            "hint_object_ids": [],
+            "visibility_transition": {
+              "persistent": [
+                "fisherman",
+                "fishing_rod",
+                "fish"
+              ],
+              "revealed": [
+                "cat"
+              ],
+              "hidden": [],
+              "hinted": []
+            },
+            "hero_presence_transition": {
+              "fisherman": "remains on screen, shifts posture slightly",
+              "cat": "enters frame from off screen right, moves to on screen"
+            },
+            "entry_exit_actions": [
+              "Cat enters from off screen right."
+            ],
+            "offscreen_justification": "The cat was previously latent, its appearance is a new narrative element.",
+            "end_match_notes": "The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.",
+            "video_prompt": "Generate one continuous image-to-video bridge between the provided start and end keyframes.\nBeat objective: beat-02 / reveal_bridge\nClip objective: The fisherman holds the fish, then a black cat appears and approaches, prompting the fisherman to offer the catch.\nCamera move: Static shot\nSubject motion: Cat enters frame from the right, walks towards the fisherman. Fisherman lowers the fish towards the cat.\nEnvironment motion: None\nScreen direction continuity: Cat moves right-to-left towards the fisherman.\nGaze continuity: Fisherman's gaze shifts from the fish to the approaching cat, then to the fish as he offers it. Cat's gaze is fixed on the fish.\nCamera axis continuity: Preserve screen axis\nMotion beats: Fisherman holds the wriggling fish, looking at it. | A sleek black cat subtly enters the frame from the right, moving towards the fisherman's feet. | Fisherman notices the cat, a slight smile forming. | Fisherman gently lowers the fish towards the cat, who looks up expectantly.\nStart frame anchor: The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.; Medium Wide Shot, Eye-level, Standard\nEnd-state must match: The fisherman is leaning forward, offering the fish to the cat, who is looking up at it, matching the composition and interaction in frame 2.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nContinuity locks: Fixed camera perspective, no movement or cuts.; Consistent overcast lighting conditions.; Stable background environment (lake, reeds, distant trees).; Aspect ratio 16:9.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting; Silver fish\nVisibility transition: persistent=fisherman, fishing_rod, fish; revealed=cat; hinted=none\nPrimary subject continuity: {'fisherman': 'remains on screen, shifts posture slightly', 'cat': 'enters frame from off screen right, moves to on screen'}\nEntry / exit actions: Cat enters from off screen right.\nOff-screen justification: The cat was previously latent, its appearance is a new narrative element.\nAllowed hints only: No hidden-object hinting in this segment.\nForbidden early reveal: No hidden-object leak.\nPhysics and tempo: natural timing, stable anatomy, coherent scale, no jumpy interpolation.\nForbidden failures: identity drift, wardrobe drift, unstable background, broken hands, extra limbs, text artifacts, pseudo-cuts, lighting drift, style drift, missed end-frame landing.",
+            "negative": [],
+            "result_uri": null
+          }
+        ]
+      },
+      "indices": [],
+      "counts": {
+        "frames": 3,
+        "segments": 2,
+        "duration_sec": 10.0
+      },
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:31:39.763875+00:00",
+      "stage": "keyframes_generate",
+      "action": "generated",
+      "asset_kind": "frame",
+      "label": "Keyframe 1",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/ef6f739606ff8d79.png",
+      "indices": [
+        0
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:31:39.763929+00:00",
+      "stage": "keyframes_generate",
+      "action": "generated",
+      "asset_kind": "frame",
+      "label": "Keyframe 2",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/e625badc7be55a3c.png",
+      "indices": [
+        1
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:31:39.763942+00:00",
+      "stage": "keyframes_generate",
+      "action": "generated",
+      "asset_kind": "frame",
+      "label": "Keyframe 3",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/de847032eff59d69.png",
+      "indices": [
+        2
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:31:39.763966+00:00",
+      "stage": "keyframes_generate",
+      "action": "updated",
+      "asset_kind": "prompt",
+      "label": "Prompt for keyframe 2",
+      "from_value": "Create a single cinematic keyframe.\nBeat objective: beat-01 / reveal\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.; The Caught Fish: A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.; must preserve Always appears wet and alive., Its size is consistent: medium, fitting comfortably in a human hand., Its color is consistently silver with subtle iridescence.\nWardrobe and props: Fisherman holding fish; Fish wriggling; Fishing rod visible\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Fisherman and fish as focal point, slightly off-center.; Fisherman has reeled in, holding the fish up.\nScreen geography: position=Fisherman in the left-mid frame, fish held higher in the frame.; body_facing=Slightly angled away from camera, looking at the fish.; travel=Static; gaze=Towards the fish.; gaze_target=fish; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'not yet revealed'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small_in_frame'}\nAction and expression: The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.; Satisfaction, mild surprise\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Fisherman's attire and general appearance are stable.; Fishing rod's design and color are consistent.; Water surface remains calm with subtle reflections.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame.",
+      "to_value": "A single cinematic keyframe. The Fisherman, a weathered, middle-aged man with a kind face, wearing a faded blue fishing vest over a blue denim shirt, a worn-out dark grey cap, and practical, dark olive trousers, is seated on the grassy bank of a calm lake. He has a short, neatly trimmed grey beard and a patient demeanor. He is holding a simple, sturdy fishing rod with a dark, slightly scuffed handle, its thin line extending into the water where a small, red-and-white bobber is visible. The setting is a serene, slightly overcast lakeside with soft, diffused natural light, consistent with an overcast day, casting no harsh shadows. The water is calm, reflecting the muted, light grey sky. Reeds and tall grass line the immediate bank in the foreground, with a few distant, indistinct dark green trees on the opposite shore, creating a peaceful and slightly melancholic atmosphere. The overall color palette is muted and naturalistic, with cool tones dominating. The fisherman is in the left-mid frame, slightly angled away from the camera, looking towards the water with a mild, content expression. The shot is a medium wide, eye-level, static shot, captured with a standard lens on a tripod, maintaining a fixed perspective. The aesthetic is grounded and naturalistic, with subtle details and authentic textures, focusing on a quiet, observational moment. The fisherman's attire, fishing rod, calm lake, and overcast lighting are all consistent with previous frames. The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line, his expression one of mild satisfaction. The fish is medium-sized, silver-scaled, appearing wet and alive, with clear, unblinking eyes.",
+      "indices": [
+        1
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {
+        "original": "Create a single cinematic keyframe.\nBeat objective: beat-01 / reveal\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.; The Caught Fish: A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.; must preserve Always appears wet and alive., Its size is consistent: medium, fitting comfortably in a human hand., Its color is consistently silver with subtle iridescence.\nWardrobe and props: Fisherman holding fish; Fish wriggling; Fishing rod visible\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Fisherman and fish as focal point, slightly off-center.; Fisherman has reeled in, holding the fish up.\nScreen geography: position=Fisherman in the left-mid frame, fish held higher in the frame.; body_facing=Slightly angled away from camera, looking at the fish.; travel=Static; gaze=Towards the fish.; gaze_target=fish; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'not yet revealed'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small_in_frame'}\nAction and expression: The fisherman has just pulled a wriggling silver fish from the water, holding it up by the line. His expression is one of mild satisfaction.; Satisfaction, mild surprise\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Fisherman's attire and general appearance are stable.; Fishing rod's design and color are consistent.; Water surface remains calm with subtle reflections.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: The cat itself must not be visible before the fish is caught and the fisherman looks towards its direction.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame."
+      }
+    },
+    {
+      "ts": "2026-06-07T18:31:39.763975+00:00",
+      "stage": "keyframes_generate",
+      "action": "updated",
+      "asset_kind": "prompt",
+      "label": "Prompt for keyframe 3",
+      "from_value": "Create a single cinematic keyframe.\nBeat objective: beat-03 / aftermath\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.; The Caught Fish: A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.; must preserve Always appears wet and alive., Its size is consistent: medium, fitting comfortably in a human hand., Its color is consistently silver with subtle iridescence.; The Cat: A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.; must preserve Always black with green eyes., Its size is consistent with an average domestic cat., Its movements are fluid and feline.\nWardrobe and props: Fisherman offering fish; Cat looking at fish; Fish visible\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Fisherman, fish, and cat forming a triangular composition, drawing attention to the interaction.; Fisherman leaning slightly forward, cat positioned at his feet, looking up.\nScreen geography: position=Fisherman left-mid, fish center, cat lower-right.; body_facing=Fisherman angled towards the cat, cat angled towards the fish.; travel=Static; gaze=Fisherman towards cat/fish, cat towards fish.; gaze_target=fish; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'on screen'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small'}\nAction and expression: The fisherman gently lowers the wriggling fish towards a sleek black cat, which has approached and is looking up expectantly. The cat is positioned near the fisherman's feet.; Generosity, curiosity, anticipation\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Fisherman's attire and general appearance are stable.; Fishing rod's design and color are consistent.; Water surface remains calm with subtle reflections.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting; Silver fish; Black cat\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: No hidden-object leak.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame.",
+      "to_value": "A cinematic medium wide shot, eye-level, of a weathered, middle-aged man, the Fisherman, with a kind face and neatly trimmed beard, wearing a faded blue fishing vest, a worn-out dark cap, and practical dark trousers. He is seated on the grassy bank of a serene, slightly overcast lakeside, leaning slightly forward. His simple, sturdy fishing rod with a dark, slightly scuffed handle is held in his left hand, and he is gently lowering a medium-sized, silver-scaled, wriggling fish, still appearing wet and alive, towards a sleek black cat with bright, curious green eyes and a long, swishing tail. The cat is positioned at his feet, looking up expectantly at the fish. The water is calm, reflecting the muted, overcast sky. Reeds and tall grass line the immediate bank, with distant, indistinct trees on the opposite shore. The composition forms a triangular shape with the fisherman, fish, and cat, drawing attention to their interaction. The fisherman is positioned left-mid, the fish is center, and the cat is lower-right. The fisherman is angled towards the cat and fish, and the cat is angled towards the fish. The lighting is soft, diffused natural light, consistent with an overcast day, with no harsh shadows or direct sunlight, creating an even and gentle illumination that enhances the peaceful and slightly melancholic mood. The color palette consists of muted natural tones: soft greens for the grass and reeds, earthy browns for the bank, and desaturated blues and grays for the sky and water, with a subtle reflective quality on the water's surface. The black cat provides a strong, contrasting element. The overall aesthetic is grounded and naturalistic, with a focus on subtle details and authentic textures, capturing a quiet, observational moment of connection. The camera is static, maintaining a consistent eye-level perspective, with an aspect ratio of 16:9.",
+      "indices": [
+        2
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {
+        "original": "Create a single cinematic keyframe.\nBeat objective: beat-03 / aftermath\nSubject identity: The Fisherman: A weathered, middle-aged man with a kind face, wearing a faded blue fishing vest, a worn-out cap, and practical, dark trousers. He has a short, neatly trimmed beard and a patient demeanor. His fishing rod is a simple, sturdy model.; must preserve Always seated on a small, portable stool or directly on the bank., His fishing rod is always within reach or actively held., His attire remains consistent: faded blue vest, worn cap, dark trousers.; Fishing Rod: A simple, sturdy fishing rod with a dark, slightly scuffed handle and a thin, visible line extending into the water. A small, red-and-white bobber is visible on the water's surface.; must preserve Always held by the fisherman or resting beside him., The line always extends into the water., The bobber is always visible on the water's surface until a fish is caught.; The Caught Fish: A medium-sized, silver-scaled fish, still slightly wriggling, with clear, unblinking eyes. It appears fresh and healthy.; must preserve Always appears wet and alive., Its size is consistent: medium, fitting comfortably in a human hand., Its color is consistently silver with subtle iridescence.; The Cat: A sleek, black cat with bright, curious green eyes and a long, swishing tail. It moves with a quiet, graceful stealth.; must preserve Always black with green eyes., Its size is consistent with an average domestic cat., Its movements are fluid and feline.\nWardrobe and props: Fisherman offering fish; Cat looking at fish; Fish visible\nSetting: A serene, slightly overcast lakeside setting. The water is calm, reflecting the muted sky. Reeds and tall grass line the immediate bank, with a few distant, indistinct trees on the opposite shore. The overall atmosphere is peaceful and slightly melancholic.\nShot design: Medium Wide Shot, Eye-level, Standard, Tripod\nComposition and blocking: Fisherman, fish, and cat forming a triangular composition, drawing attention to the interaction.; Fisherman leaning slightly forward, cat positioned at his feet, looking up.\nScreen geography: position=Fisherman left-mid, fish center, cat lower-right.; body_facing=Fisherman angled towards the cat, cat angled towards the fish.; travel=Static; gaze=Fisherman towards cat/fish, cat towards fish.; gaze_target=fish; axis=Right\nPrimary subject presence: {'fisherman': 'on screen', 'cat': 'on screen'}\nPrimary subject scale: {'fisherman': 'medium', 'cat': 'small'}\nAction and expression: The fisherman gently lowers the wriggling fish towards a sleek black cat, which has approached and is looking up expectantly. The cat is positioned near the fisherman's feet.; Generosity, curiosity, anticipation\nLighting and color: Soft, diffused natural light, overcast.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.\nStyle and camera language: Simple realistic scene, fixed perspective, single shot. The aesthetic is grounded and naturalistic, avoiding overly dramatic or stylized elements. Focus on subtle details and authentic textures.; Muted natural tones: soft greens, earthy browns, desaturated blues and grays for the sky and water. A touch of warmth from the fisherman's skin and the red-and-white bobber. The black cat provides a strong, contrasting element.; To capture a quiet, observational moment of connection between man, nature, and animal. The scene should feel unhurried and intimate, emphasizing the simple pleasure of the interaction. The fixed perspective enhances the feeling of being a silent observer.; Static, medium-wide shot, maintaining a consistent eye-level perspective throughout the entire scene. The camera remains unmoving, framing the fisherman, the water, and the bank. No zooms, pans, or cuts. Aspect ratio 16:9.; Soft, diffused natural light, consistent with an overcast day. No harsh shadows or direct sunlight. The lighting should be even and gentle, enhancing the peaceful mood. The water should have a subtle, reflective quality.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Fisherman's attire and general appearance are stable.; Fishing rod's design and color are consistent.; Water surface remains calm with subtle reflections.; Fisherman's attire; Fishing rod; Calm lake; Overcast lighting; Silver fish; Black cat\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: No hidden-object leak.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame."
+      }
+    },
+    {
+      "ts": "2026-06-07T18:31:39.764698+00:00",
+      "stage": "keyframes_generate",
+      "action": "completed",
+      "asset_kind": "stage",
+      "label": "Keyframe generation",
+      "indices": [],
+      "counts": {
+        "frames_changed": 3,
+        "prompt_changes": 2,
+        "frame_count": 3
+      },
+      "retry": 0,
+      "details": {
+        "requested_regen_frames": []
+      }
+    },
+    {
+      "ts": "2026-06-07T18:31:44.005001+00:00",
+      "stage": "storyboard_review",
+      "action": "completed",
+      "asset_kind": "review",
+      "label": "Storyboard review #1",
+      "indices": [],
+      "counts": {
+        "iteration": 1,
+        "issues": 5,
+        "blocking_issues": 0
+      },
+      "mode": "multimodal",
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:33:31.996632+00:00",
+      "stage": "segments_generate",
+      "action": "generated",
+      "asset_kind": "segment",
+      "label": "Segment 1: frame 1 -> frame 2",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/segments/kling-892667792959344721.mp4",
+      "indices": [
+        0
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:33:31.996690+00:00",
+      "stage": "segments_generate",
+      "action": "generated",
+      "asset_kind": "segment",
+      "label": "Segment 2: frame 2 -> frame 3",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/segments/kling-892668014289223764.mp4",
+      "indices": [
+        1
+      ],
+      "counts": {},
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:33:31.997488+00:00",
+      "stage": "segments_generate",
+      "action": "completed",
+      "asset_kind": "stage",
+      "label": "Segment generation",
+      "indices": [],
+      "counts": {
+        "segments_changed": 2,
+        "segment_count": 2
+      },
+      "retry": 0,
+      "details": {
+        "requested_regen_segments": []
+      }
+    },
+    {
+      "ts": "2026-06-07T18:33:32.307512+00:00",
+      "stage": "stitch_video",
+      "action": "generated",
+      "asset_kind": "video",
+      "label": "Final video",
+      "to_value": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/artifact-sample-fisher-cat-simple-ru-10s-20260607/final_video_artifact-sample-fisher-cat-simple-ru-10s-20260607.mp4",
+      "indices": [],
+      "counts": {
+        "segments": 2
+      },
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:33:37.463322+00:00",
+      "stage": "video_review",
+      "action": "completed",
+      "asset_kind": "review",
+      "label": "Video review #1",
+      "indices": [],
+      "counts": {
+        "iteration": 1,
+        "issues": 4,
+        "blocking_issues": 0
+      },
+      "mode": "multimodal",
+      "retry": 0,
+      "details": {}
+    },
+    {
+      "ts": "2026-06-07T18:33:37.518319+00:00",
+      "stage": "flow",
+      "action": "completed",
+      "asset_kind": "run",
+      "label": "Scene generation run",
+      "indices": [],
+      "counts": {
+        "frames": 3,
+        "segments": 2,
+        "storyboard_reviews": 1,
+        "video_reviews": 1
+      },
+      "retry": 0,
+      "details": {}
+    }
+  ],
+  "sb_review_mode": "multimodal",
+  "vid_review_mode": "multimodal"
+}
