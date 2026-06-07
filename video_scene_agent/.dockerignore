@@ -1,0 +1,12 @@
+.git
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+artifacts
+build
+dist
+*.egg-info
+*.pyc
+deploy/prefect/.env.local
+deploy/prefect/.htpasswd

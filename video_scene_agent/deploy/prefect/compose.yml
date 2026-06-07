@@ -1,0 +1,118 @@
+services:
+  postgres:
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: prefect
+      POSTGRES_USER: prefect
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - prefect-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prefect -d prefect"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - prefect
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - prefect-redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - prefect
+
+  prefect-server:
+    image: prefecthq/prefect:3-latest
+    restart: unless-stopped
+    command: ["prefect", "server", "start", "--host", "0.0.0.0", "--port", "4200", "--no-services"]
+    env_file:
+      - .env.local
+    environment:
+      PREFECT_SERVER_DATABASE_CONNECTION_URL: postgresql+asyncpg://prefect:${POSTGRES_PASSWORD}@postgres:5432/prefect
+      PREFECT_SERVER_DOCKET_URL: redis://redis:6379/0
+      PREFECT_SERVER_API_HOST: 0.0.0.0
+      PREFECT_SERVER_API_PORT: 4200
+      PREFECT_UI_SERVE_BASE: /prefect/
+      PREFECT_UI_URL: ${PREFECT_PUBLIC_URL}
+      PREFECT_UI_API_URL: ${PREFECT_PUBLIC_API_URL}
+      PREFECT_SERVER_CSRF_PROTECTION_ENABLED: "true"
+    ports:
+      - "127.0.0.1:4200:4200"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - prefect
+
+  prefect-services:
+    image: prefecthq/prefect:3-latest
+    restart: unless-stopped
+    command: ["prefect", "server", "services", "start"]
+    env_file:
+      - .env.local
+    environment:
+      PREFECT_SERVER_DATABASE_CONNECTION_URL: postgresql+asyncpg://prefect:${POSTGRES_PASSWORD}@postgres:5432/prefect
+      PREFECT_SERVER_DOCKET_URL: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      prefect-server:
+        condition: service_started
+    networks:
+      - prefect
+
+  prefect-worker:
+    image: ${VIDEO_SCENE_AGENT_IMAGE}
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command:
+      [
+        "prefect",
+        "worker",
+        "start",
+        "--pool",
+        "${PREFECT_WORK_POOL}",
+        "--type",
+        "docker",
+        "--limit",
+        "2",
+        "--with-healthcheck",
+        "--install-policy",
+        "never"
+      ]
+    env_file:
+      - .env.local
+    environment:
+      PREFECT_API_URL: http://prefect-server:4200/api
+      STORAGE_PATH: /app/artifacts
+      PREFECT_LOGGING_TO_API_WHEN_MISSING_FLOW: "ignore"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      prefect-server:
+        condition: service_started
+    networks:
+      - prefect
+
+volumes:
+  prefect-postgres:
+  prefect-redis:
+
+networks:
+  prefect:
+    name: prefect

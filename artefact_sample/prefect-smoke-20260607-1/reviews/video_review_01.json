@@ -1,0 +1,15 @@
+{
+  "iteration": 1,
+  "issues": [],
+  "all_issues": [
+    {
+      "severity": "warning",
+      "target": "segment:0",
+      "problem": "The boat does not drift from left to right as planned. It remains relatively centered, with only subtle movement.",
+      "suggestion": ""
+    }
+  ],
+  "blocking_issues": [],
+  "mode": "multimodal",
+  "error": null
+}

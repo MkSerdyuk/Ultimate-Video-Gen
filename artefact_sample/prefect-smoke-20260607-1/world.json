@@ -1,0 +1,85 @@
+{
+  "scene_background": "A serene, calm body of water under a soft, diffused light. The scene evokes a sense of tranquility and gentle movement.",
+  "objects": [
+    {
+      "id": "water_surface",
+      "name": "Calm Blue Water Surface",
+      "appearance": "A vast expanse of deep, tranquil blue water. The surface is mostly still, with very subtle, slow ripples. The color is a consistent, rich cerulean blue, reflecting a soft, diffused light from above.",
+      "constraints": [
+        "Color: Consistent cerulean blue.",
+        "Texture: Smooth, with minimal, slow, gentle ripples.",
+        "Reflectivity: Soft, diffused reflections, no harsh glare.",
+        "Depth: Appears deep and clear."
+      ],
+      "story_role": "environment",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    },
+    {
+      "id": "paper_boat",
+      "name": "Small White Paper Boat",
+      "appearance": "A small, meticulously folded paper boat, pristine white in color. Its folds are sharp and distinct, giving it a clean, geometric form. It sits lightly on the water's surface.",
+      "constraints": [
+        "Color: Pure, unblemished white.",
+        "Material: Appears to be made of standard paper, showing subtle texture.",
+        "Size: Small, approximately 1/10th the width of the frame.",
+        "Condition: Pristine, no tears, stains, or water damage.",
+        "Orientation: Gently floating, slightly tilted by the subtle water movement."
+      ],
+      "story_role": "prop",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    }
+  ],
+  "primary_subject_ids": [
+    "paper_boat"
+  ],
+  "style_guide": {
+    "style": "Minimalist, serene, cinematic, with a focus on texture and subtle movement. The aesthetic is clean and uncluttered, emphasizing the subject.",
+    "palette": "Dominantly cool tones: deep cerulean blue for water, pure white for the boat. Soft, diffused light creates gentle shadows and highlights, avoiding harsh contrasts.",
+    "cinematic_intent": "To evoke a sense of calm, simplicity, and gentle progression. The shot should feel meditative and visually pleasing, highlighting the delicate balance of the boat on water.",
+    "camera_language": "Static or very slow, smooth, almost imperceptible push-in or lateral dolly. Eye-level or slightly elevated perspective, framing the boat centrally or using the rule of thirds. Focus is sharp on the paper boat, with a soft, pleasing depth of field.",
+    "lighting_logic": "Soft, diffused, overcast lighting. No direct sunlight or harsh shadows. The light source is broad and even, illuminating the scene gently from above, creating subtle reflections on the water and soft shading on the boat's folds.",
+    "continuity_bible": [
+      "The water remains a consistent cerulean blue.",
+      "The paper boat remains pristine white and undamaged.",
+      "Movement is always slow and gentle.",
+      "The boat floats naturally on the water's surface.",
+      "Lighting remains soft and diffused."
+    ],
+    "global_continuity_locks": [
+      "Aspect Ratio: 16:9.",
+      "Duration: Approximately 3.0 seconds.",
+      "Style: Simple cinematic, single clear subject, low motion.",
+      "Water color: Consistent cerulean blue.",
+      "Boat color: Consistent pure white.",
+      "Boat condition: Pristine, undamaged.",
+      "Lighting: Soft, diffused, no harsh shadows or glare."
+    ],
+    "public_continuity_locks": [
+      "Water color: Consistent cerulean blue.",
+      "Boat color: Consistent pure white.",
+      "Boat condition: Pristine, undamaged.",
+      "Lighting: Soft, diffused, no harsh shadows or glare."
+    ],
+    "reveal_locked_traits": [],
+    "global_negative": [
+      "Text",
+      "Logos",
+      "Watermarks",
+      "Extra fingers",
+      "Warped anatomy",
+      "Unstable background details",
+      "Identity drift",
+      "Duplicate limbs",
+      "Harsh lighting",
+      "Choppy water",
+      "Damaged boat",
+      "Any objects other than the water and the paper boat"
+    ]
+  }
+}

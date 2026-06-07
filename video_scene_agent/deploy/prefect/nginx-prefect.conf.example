@@ -1,0 +1,78 @@
+# Add inside the public `server { ... }` block, before the catch-all `location /`.
+# Create the password file with a tool such as `htpasswd`.
+# Kling media inputs use tmpfiles by default. If KLING_USE_TMPFILES=0, media URLs
+# must be provider-fetchable; expose a separate signed/public route and point
+# KLING_MEDIA_PUBLIC_URL_BASE at it.
+
+location = /prefect {
+    return 301 /prefect/;
+}
+
+location /prefect/api/ {
+    auth_basic "Private Prefect";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    proxy_pass http://127.0.0.1:4200/api/;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Authorization $http_authorization;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_read_timeout 3600s;
+    proxy_send_timeout 3600s;
+    proxy_buffering off;
+}
+
+location /prefect/ {
+    auth_basic "Private Prefect";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    proxy_pass http://127.0.0.1:4200/;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Authorization $http_authorization;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_read_timeout 3600s;
+    proxy_send_timeout 3600s;
+    proxy_buffering off;
+}
+
+location /artifacts/ {
+    auth_basic "Private Artifacts";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    alias /absolute/path/to/video_scene_agent/artifacts/;
+    autoindex off;
+    default_type application/octet-stream;
+    add_header X-Content-Type-Options nosniff always;
+
+    types {
+        video/mp4 mp4;
+        image/jpeg jpg jpeg;
+        image/png png;
+        image/webp webp;
+        application/json json;
+        text/markdown md;
+        text/plain txt log;
+    }
+
+    # Allowing GET also allows HEAD in Nginx.
+    limit_except GET {
+        deny all;
+    }
+}
+
+# Optional provider-fetchable media route for Kling when KLING_USE_TMPFILES=0.
+# Restrict by signed URLs or network policy in real deployments.
+# location /kling-media/ {
+#     auth_basic off;
+#     alias /absolute/path/to/video_scene_agent/artifacts/;
+#     autoindex off;
+# }

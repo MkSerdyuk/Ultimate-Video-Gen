@@ -1,0 +1,269 @@
+{
+  "scene_background": "A serene, calm body of water under a soft, diffused light. The scene evokes a sense of tranquility and gentle movement.",
+  "objects": [
+    {
+      "id": "water_surface",
+      "name": "Calm Blue Water Surface",
+      "appearance": "A vast expanse of deep, tranquil blue water. The surface is mostly still, with very subtle, slow ripples. The color is a consistent, rich cerulean blue, reflecting a soft, diffused light from above.",
+      "constraints": [
+        "Color: Consistent cerulean blue.",
+        "Texture: Smooth, with minimal, slow, gentle ripples.",
+        "Reflectivity: Soft, diffused reflections, no harsh glare.",
+        "Depth: Appears deep and clear."
+      ],
+      "story_role": "environment",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    },
+    {
+      "id": "paper_boat",
+      "name": "Small White Paper Boat",
+      "appearance": "A small, meticulously folded paper boat, pristine white in color. Its folds are sharp and distinct, giving it a clean, geometric form. It sits lightly on the water's surface.",
+      "constraints": [
+        "Color: Pure, unblemished white.",
+        "Material: Appears to be made of standard paper, showing subtle texture.",
+        "Size: Small, approximately 1/10th the width of the frame.",
+        "Condition: Pristine, no tears, stains, or water damage.",
+        "Orientation: Gently floating, slightly tilted by the subtle water movement."
+      ],
+      "story_role": "prop",
+      "default_visibility": "always_visible",
+      "reveal_rules": [],
+      "pre_reveal_hints": [],
+      "hard_exclusions_before_reveal": []
+    }
+  ],
+  "primary_subject_ids": [
+    "paper_boat"
+  ],
+  "style_guide": {
+    "style": "Minimalist, serene, cinematic, with a focus on texture and subtle movement. The aesthetic is clean and uncluttered, emphasizing the subject.",
+    "palette": "Dominantly cool tones: deep cerulean blue for water, pure white for the boat. Soft, diffused light creates gentle shadows and highlights, avoiding harsh contrasts.",
+    "cinematic_intent": "To evoke a sense of calm, simplicity, and gentle progression. The shot should feel meditative and visually pleasing, highlighting the delicate balance of the boat on water.",
+    "camera_language": "Static or very slow, smooth, almost imperceptible push-in or lateral dolly. Eye-level or slightly elevated perspective, framing the boat centrally or using the rule of thirds. Focus is sharp on the paper boat, with a soft, pleasing depth of field.",
+    "lighting_logic": "Soft, diffused, overcast lighting. No direct sunlight or harsh shadows. The light source is broad and even, illuminating the scene gently from above, creating subtle reflections on the water and soft shading on the boat's folds.",
+    "continuity_bible": [
+      "The water remains a consistent cerulean blue.",
+      "The paper boat remains pristine white and undamaged.",
+      "Movement is always slow and gentle.",
+      "The boat floats naturally on the water's surface.",
+      "Lighting remains soft and diffused."
+    ],
+    "global_continuity_locks": [
+      "Aspect Ratio: 16:9.",
+      "Duration: Approximately 3.0 seconds.",
+      "Style: Simple cinematic, single clear subject, low motion.",
+      "Water color: Consistent cerulean blue.",
+      "Boat color: Consistent pure white.",
+      "Boat condition: Pristine, undamaged.",
+      "Lighting: Soft, diffused, no harsh shadows or glare."
+    ],
+    "public_continuity_locks": [
+      "Water color: Consistent cerulean blue.",
+      "Boat color: Consistent pure white.",
+      "Boat condition: Pristine, undamaged.",
+      "Lighting: Soft, diffused, no harsh shadows or glare."
+    ],
+    "reveal_locked_traits": [],
+    "global_negative": [
+      "Text",
+      "Logos",
+      "Watermarks",
+      "Extra fingers",
+      "Warped anatomy",
+      "Unstable background details",
+      "Identity drift",
+      "Duplicate limbs",
+      "Harsh lighting",
+      "Choppy water",
+      "Damaged boat",
+      "Any objects other than the water and the paper boat"
+    ]
+  },
+  "story_beats": [
+    {
+      "idx": 0,
+      "id": "beat-00",
+      "label": "Gentle Float",
+      "narrative_function": "Introduce the subject and establish the serene environment.",
+      "goal": "Show the paper boat gently floating on calm water.",
+      "emotion": "Serenity, tranquility, peace.",
+      "visible_objects": [
+        "paper_boat",
+        "water_surface"
+      ],
+      "latent_objects": [],
+      "allowed_hints": [],
+      "motion_intensity": "low"
+    }
+  ],
+  "frames": [
+    {
+      "idx": 0,
+      "action_in_frame": "A small white paper boat floats gently on the calm blue water, slightly off-center.",
+      "camera": "Medium shot, eye-level perspective.",
+      "lighting": "Soft, diffused, overcast lighting, creating subtle reflections on the water.",
+      "shot_size": "Medium Shot",
+      "camera_angle": "Eye-level",
+      "lens": "Standard",
+      "camera_support": "Tripod",
+      "composition": "Rule of thirds, boat slightly to the left of center.",
+      "blocking": "The boat is stationary relative to the frame, but the water shows subtle movement.",
+      "screen_position": "Mid-left",
+      "body_facing": "N/A",
+      "travel_direction": "N/A",
+      "gaze_direction": "N/A",
+      "gaze_target": "N/A",
+      "camera_axis_side": "N/A",
+      "emotional_beat": "Serene",
+      "beat_id": "beat-00",
+      "frame_class": "establishing",
+      "continuity_anchors": [
+        "Pristine white paper boat",
+        "Calm cerulean blue water",
+        "Soft diffused lighting"
+      ],
+      "visible_object_ids": [
+        "paper_boat",
+        "water_surface"
+      ],
+      "hidden_object_ids": [],
+      "hint_object_ids": [],
+      "hero_presence": {
+        "paper_boat": "on screen"
+      },
+      "hero_scale": {
+        "paper_boat": "small"
+      },
+      "must_have": [
+        "Pristine white paper boat",
+        "Calm blue water",
+        "Soft reflections"
+      ],
+      "negative": [
+        "Harsh shadows",
+        "Choppy water",
+        "Damaged boat"
+      ],
+      "image_prompt": "Create a single cinematic keyframe.\nBeat objective: beat-00 / establishing\nSubject identity: Calm Blue Water Surface: A vast expanse of deep, tranquil blue water. The surface is mostly still, with very subtle, slow ripples. The color is a consistent, rich cerulean blue, reflecting a soft, diffused light from above.; must preserve Color: Consistent cerulean blue., Texture: Smooth, with minimal, slow, gentle ripples., Reflectivity: Soft, diffused reflections, no harsh glare., Depth: Appears deep and clear.; Small White Paper Boat: A small, meticulously folded paper boat, pristine white in color. Its folds are sharp and distinct, giving it a clean, geometric form. It sits lightly on the water's surface.; must preserve Color: Pure, unblemished white., Material: Appears to be made of standard paper, showing subtle texture., Size: Small, approximately 1/10th the width of the frame., Condition: Pristine, no tears, stains, or water damage., Orientation: Gently floating, slightly tilted by the subtle water movement.\nWardrobe and props: Pristine white paper boat; Calm blue water; Soft reflections\nSetting: A serene, calm body of water under a soft, diffused light. The scene evokes a sense of tranquility and gentle movement.\nShot design: Medium Shot, Eye-level, Standard, Tripod\nComposition and blocking: Rule of thirds, boat slightly to the left of center.; The boat is stationary relative to the frame, but the water shows subtle movement.\nScreen geography: position=Mid-left; body_facing=N/A; travel=N/A; gaze=N/A; gaze_target=N/A; axis=N/A\nPrimary subject presence: {'paper_boat': 'on screen'}\nPrimary subject scale: {'paper_boat': 'small'}\nAction and expression: A small white paper boat floats gently on the calm blue water, slightly off-center.; Serene\nLighting and color: Soft, diffused, overcast lighting, creating subtle reflections on the water.; Soft, diffused, overcast lighting. No direct sunlight or harsh shadows. The light source is broad and even, illuminating the scene gently from above, creating subtle reflections on the water and soft shading on the boat's folds.; Dominantly cool tones: deep cerulean blue for water, pure white for the boat. Soft, diffused light creates gentle shadows and highlights, avoiding harsh contrasts.\nStyle and camera language: Minimalist, serene, cinematic, with a focus on texture and subtle movement. The aesthetic is clean and uncluttered, emphasizing the subject.; Dominantly cool tones: deep cerulean blue for water, pure white for the boat. Soft, diffused light creates gentle shadows and highlights, avoiding harsh contrasts.; To evoke a sense of calm, simplicity, and gentle progression. The shot should feel meditative and visually pleasing, highlighting the delicate balance of the boat on water.; Static or very slow, smooth, almost imperceptible push-in or lateral dolly. Eye-level or slightly elevated perspective, framing the boat centrally or using the rule of thirds. Focus is sharp on the paper boat, with a soft, pleasing depth of field.; Soft, diffused, overcast lighting. No direct sunlight or harsh shadows. The light source is broad and even, illuminating the scene gently from above, creating subtle reflections on the water and soft shading on the boat's folds.\nSurface finish: keep materials, textures, and detail density coherent with the scene style.\nContinuity locks: Water color: Consistent cerulean blue.; Boat color: Consistent pure white.; Boat condition: Pristine, undamaged.; Lighting: Soft, diffused, no harsh shadows or glare.; Pristine white paper boat; Calm cerulean blue water; Soft diffused lighting\nAllowed hints only: No hidden-object hinting in this frame.\nForbidden early reveal: No hidden-object leak.\nDo not reveal off-screen or future-reveal story elements that are not part of this frame.",
+      "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/prefect-smoke-20260607-1/00fd16baada0f225.png",
+      "fix_description": ""
+    },
+    {
+      "idx": 1,
+      "action_in_frame": "The small white paper boat has drifted slightly to the right, still gently floating on the calm blue water, maintaining its serene presence.",
+      "camera": "Medium shot, eye-level perspective.",
+      "lighting": "Soft, diffused, overcast lighting, consistent with the previous frame.",
+      "shot_size": "Medium Shot",
+      "camera_angle": "Eye-level",
+      "lens": "Standard",
+      "camera_support": "Tripod",
+      "composition": "Rule of thirds, boat slightly to the right of center.",
+      "blocking": "The boat has subtly drifted across the frame.",
+      "screen_position": "Mid-right",
+      "body_facing": "N/A",
+      "travel_direction": "N/A",
+      "gaze_direction": "N/A",
+      "gaze_target": "N/A",
+      "camera_axis_side": "N/A",
+      "emotional_beat": "Tranquil",
+      "beat_id": "beat-00",
+      "frame_class": "continuation",
+      "continuity_anchors": [
+        "Pristine white paper boat",
+        "Calm cerulean blue water",
+        "Soft diffused lighting"
+      ],
+      "visible_object_ids": [
+        "paper_boat",
+        "water_surface"
+      ],
+      "hidden_object_ids": [],
+      "hint_object_ids": [],
+      "hero_presence": {
+        "paper_boat": "on screen"
+      },
+      "hero_scale": {
+        "paper_boat": "small"
+      },
+      "must_have": [
+        "Pristine white paper boat",
+        "Calm blue water",
+        "Subtle drift"
+      ],
+      "negative": [
+        "Sudden movement",
+        "Water splashes",
+        "Boat sinking",
+        "harsh glare",
+        "direct sunlight",
+        "harsh shadows",
+        "text",
+        "watermarks",
+        "blur",
+        "distortion"
+      ],
+      "image_prompt": "A pristine white paper boat, meticulously folded with sharp, distinct creases, floats gently on a vast expanse of deep, tranquil cerulean blue water. The water surface is mostly still, exhibiting very subtle, slow, concentric ripples emanating from the boat's contact point, and soft, diffused reflections of an overcast sky. The boat is positioned slightly to the right of the frame's center, appearing small, approximately 1/10th the width of the frame, and is gently tilted by the water's movement. The lighting is soft, diffused, and overcast, illuminating the scene gently from above without harsh shadows or glare, creating subtle shading on the boat's folds and soft reflections on the water. The overall color palette is dominated by cool tones: rich cerulean blue for the water and pure, unblemished white for the boat. The style is minimalist, serene, and cinematic, with a focus on texture and subtle movement, emphasizing the delicate balance of the boat on water. The shot is a medium shot, eye-level perspective, with a sharp focus on the paper boat and a soft, pleasing depth of field, maintaining a photorealistic rendering.",
+      "keyframe_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/prefect-smoke-20260607-1/5e53150c125bab5b.png",
+      "fix_description": ""
+    }
+  ],
+  "segments": [
+    {
+      "idx": 0,
+      "start_frame_idx": 0,
+      "end_frame_idx": 1,
+      "duration": 3.0,
+      "transition_text": "The paper boat drifts gently across the calm water.",
+      "camera_move": "Very slow, imperceptible lateral dolly to the right, following the boat's drift.",
+      "subject_motion": "The paper boat drifts slowly from left to right across the frame.",
+      "environment_motion": "Subtle, gentle ripples on the water surface, consistent with the boat's slow drift.",
+      "screen_direction_rule": "Subject moves left-to-right.",
+      "gaze_continuity_rule": "N/A",
+      "camera_axis_rule": "Preserve screen axis.",
+      "motion_beats": [
+        "The paper boat begins its slow drift from the left side of the frame.",
+        "The boat continues its gentle movement, propelled by unseen currents.",
+        "The boat approaches the right side of the frame, maintaining its serene float."
+      ],
+      "beat_id": "beat-00",
+      "segment_class": "continuation",
+      "continuity_anchors": [
+        "Pristine white paper boat",
+        "Calm cerulean blue water",
+        "Soft diffused lighting"
+      ],
+      "visible_object_ids": [
+        "paper_boat",
+        "water_surface"
+      ],
+      "hidden_object_ids": [],
+      "hint_object_ids": [],
+      "visibility_transition": {
+        "persistent": [
+          "paper_boat",
+          "water_surface"
+        ],
+        "revealed": [],
+        "hidden": [],
+        "hinted": []
+      },
+      "hero_presence_transition": {
+        "paper_boat": "drifts smoothly from mid-left to mid-right on screen"
+      },
+      "entry_exit_actions": [],
+      "offscreen_justification": "N/A",
+      "end_match_notes": "The boat's final position in the segment matches its starting position in frame 1, slightly to the right of center, with consistent lighting and water texture.",
+      "video_prompt": "Generate one continuous image-to-video bridge between the provided start and end keyframes.\nBeat objective: beat-00 / continuation\nClip objective: The paper boat drifts gently across the calm water.\nCamera move: Very slow, imperceptible lateral dolly to the right, following the boat's drift.\nSubject motion: The paper boat drifts slowly from left to right across the frame.\nEnvironment motion: Subtle, gentle ripples on the water surface, consistent with the boat's slow drift.\nScreen direction continuity: Subject moves left-to-right.\nGaze continuity: N/A\nCamera axis continuity: Preserve screen axis.\nMotion beats: The paper boat begins its slow drift from the left side of the frame. | The boat continues its gentle movement, propelled by unseen currents. | The boat approaches the right side of the frame, maintaining its serene float.\nStart frame anchor: A small white paper boat floats gently on the calm blue water, slightly off-center.; Medium Shot, Eye-level, Standard\nEnd-state must match: The boat's final position in the segment matches its starting position in frame 1, slightly to the right of center, with consistent lighting and water texture.\nStyle and camera language: Minimalist, serene, cinematic, with a focus on texture and subtle movement. The aesthetic is clean and uncluttered, emphasizing the subject.; Dominantly cool tones: deep cerulean blue for water, pure white for the boat. Soft, diffused light creates gentle shadows and highlights, avoiding harsh contrasts.; To evoke a sense of calm, simplicity, and gentle progression. The shot should feel meditative and visually pleasing, highlighting the delicate balance of the boat on water.; Static or very slow, smooth, almost imperceptible push-in or lateral dolly. Eye-level or slightly elevated perspective, framing the boat centrally or using the rule of thirds. Focus is sharp on the paper boat, with a soft, pleasing depth of field.; Soft, diffused, overcast lighting. No direct sunlight or harsh shadows. The light source is broad and even, illuminating the scene gently from above, creating subtle reflections on the water and soft shading on the boat's folds.\nContinuity locks: Aspect Ratio: 16:9.; Duration: Approximately 3.0 seconds.; Style: Simple cinematic, single clear subject, low motion.; Water color: Consistent cerulean blue.; Boat color: Consistent pure white.; Boat condition: Pristine, undamaged.; Lighting: Soft, diffused, no harsh shadows or glare.; Pristine white paper boat; Calm cerulean blue water; Soft diffused lighting\nVisibility transition: persistent=paper_boat, water_surface; revealed=none; hinted=none\nPrimary subject continuity: {'paper_boat': 'drifts smoothly from mid-left to mid-right on screen'}\nEntry / exit actions: No subject exits or entries are planned.\nOff-screen justification: N/A\nAllowed hints only: No hidden-object hinting in this segment.\nForbidden early reveal: No hidden-object leak.\nPhysics and tempo: natural timing, stable anatomy, coherent scale, no jumpy interpolation.\nForbidden failures: identity drift, wardrobe drift, unstable background, broken hands, extra limbs, text artifacts, pseudo-cuts, lighting drift, style drift, missed end-frame landing.",
+      "negative": [
+        "Jerky camera movement",
+        "Rapid boat movement",
+        "Water splashing",
+        "Changes in lighting"
+      ],
+      "result_uri": "file:///home/mkserdyuk/Projects/Ultimate-Video-Gen/video_scene_agent/artifacts/runs/prefect-smoke-20260607-1/segments/kling-892549463595286572.mp4"
+    }
+  ]
+}
