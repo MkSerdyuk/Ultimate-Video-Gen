@@ -1,65 +1,65 @@
-# Video Scene Agent
+# Агент генерации видео
 
-Prefect-based video scene generation using OpenRouter, direct Kling 3.0, and FFmpeg.
+Генератор коротких видеосцен на Prefect с OpenRouter, прямым API Kling 3.0 и FFmpeg.
 
-## Overview
+## Обзор
 
-The current runtime executes the scene pipeline as a Prefect flow with run-scoped artifacts under `artifacts/runs/<run_id>/`.
-The logical subsystems are unchanged:
+Текущий runtime выполняет пайплайн сцены как Prefect flow. Артефакты каждого запуска сохраняются отдельно в `artifacts/runs/<run_id>/`.
 
-- `Director`: world + storyboard generation
-- `Storyboard Editor`: storyboard review/fix loop
-- `Operator`: segment generation + stitching
-- `Video Editor`: final video review/fix loop
+Основные подсистемы:
 
-`scene_agent.main.run()` and `python -m scene_agent` invoke the Prefect flow directly.
+- `Director`: генерация мира и storyboard.
+- `Storyboard Editor`: цикл проверки и исправления storyboard.
+- `Operator`: генерация видеосегментов и склейка.
+- `Video Editor`: цикл проверки и исправления итогового видео.
 
-## Features
+`scene_agent.main.run()` и `python -m scene_agent` напрямую запускают Prefect flow.
 
-- **Text / review generation**: OpenRouter
-- **Image generation**: `google/gemini-2.5-flash-image` via OpenRouter
-- **Video generation / repair**: Kling 3.0 Omni Standard via direct Kling API
-- **Video stitching**: FFmpeg
-- **Artifacts**: local filesystem storage with run manifest persistence
-- **Resumability**: Prefect flow state + `manifest.json` under each run directory
+## Возможности
 
-## Installation
+- **Текст и review**: OpenRouter.
+- **Генерация изображений**: `google/gemini-2.5-flash-image` через OpenRouter.
+- **Генерация и ремонт видео**: Kling 3.0 Omni Standard через прямой Kling API.
+- **Склейка видео**: FFmpeg.
+- **Артефакты**: локальное файловое хранилище и `manifest.json` для каждого запуска.
+- **Возобновление запуска**: состояние Prefect flow и manifest-файл в папке запуска.
+
+## Установка
 
 ```bash
 cd video_scene_agent
 python3 -m pip install -e ".[dev]"
 ```
 
-### System Requirements
+### Системные требования
 
-- Python 3.10+
+- Python 3.9+
 - FFmpeg
 
 ```bash
 brew install ffmpeg
-# or
+# или
 sudo apt install ffmpeg
 ```
 
-## Configuration
+## Конфигурация
 
-Runtime configuration belongs in `video_scene_agent/.env`. When working from the
-package directory, create it from the checked-in template:
+Runtime-конфигурация хранится в `video_scene_agent/.env`. Если вы работаете из папки пакета, создайте файл из шаблона:
 
 ```bash
 cp .env.example .env
 ```
 
-Required for live generation:
+Обязательные переменные для live-генерации:
 
 ```bash
-OPENROUTER_API_KEY=sk-or-...
+OPENROUTER_API_KEY=...
 KLING_ACCESS_KEY=...
 KLING_SECRET_KEY=...
 STORAGE_PATH=./artifacts
 ```
 
-Optional Kling settings:
+Опциональные настройки Kling:
 
 ```bash
 KLING_API_BASE=https://api-singapore.klingai.com
@@ -79,7 +79,7 @@ KLING_TMPFILES_MAX_BYTES=100000000
 KLING_TMPFILES_TIMEOUT_SEC=120
 ```
 
-Optional Prefect settings for self-hosted deployments:
+Опциональные настройки Prefect для self-hosted-развёртывания:
 
 ```bash
 PREFECT_API_URL=http://127.0.0.1:4200/api
@@ -90,23 +90,15 @@ PREFECT_SERVER_API_AUTH_STRING=admin:replace-with-long-random-password
 PREFECT_API_AUTH_STRING=admin:replace-with-long-random-password
 ```
 
-Kling media inputs are published through tmpfiles by default. Local keyframes
-and source segment videos stay in `artifacts/runs/...`, and only temporary
-copies are uploaded as direct `https://tmpfiles.org/dl/...` inputs for Kling.
-`STORAGE_PUBLIC_URL_BASE` and `KLING_MEDIA_PUBLIC_URL_BASE` are optional now;
-use them for public artifact links or if `KLING_USE_TMPFILES=0` and you provide
-your own provider-fetchable media hosting.
+Входные медиа для Kling по умолчанию публикуются через tmpfiles. Локальные keyframes и исходные сегменты остаются в `artifacts/runs/...`; во внешний сервис отправляются только временные копии как прямые `https://tmpfiles.org/dl/...` URL для Kling.
 
-`KLING_RUN_TOKEN_LIMIT` is a hard run-level cap in Kling resource units. When
-the cap is reached, the runtime stops paid Kling calls, keeps existing segments
-for skipped edits, and uses local FFmpeg still clips for missing generated
-segments so the final video can still be stitched and returned.
+`STORAGE_PUBLIC_URL_BASE` и `KLING_MEDIA_PUBLIC_URL_BASE` теперь опциональны. Они нужны для публичных ссылок на артефакты или для случая `KLING_USE_TMPFILES=0`, когда вы предоставляете собственный HTTPS-хостинг медиа, доступный внешнему провайдеру.
 
-Keyframe images, image-to-video segments, and feature-guided segment repairs all
-receive the same normalized `constraints.aspect_ratio` value. Unknown aspect
-ratios fall back to `16:9` consistently across image and video providers.
+`KLING_RUN_TOKEN_LIMIT` — жёсткий лимит на один запуск в ресурсных единицах Kling. Когда лимит достигнут, runtime прекращает платные вызовы Kling, сохраняет уже существующие сегменты для пропущенных edit-операций и создаёт локальные FFmpeg still-клипы для недостающих сегментов, чтобы итоговое видео всё равно можно было склеить и вернуть.
 
-## Usage
+Опорные кадры, image-to-video-сегменты и feature-guided repair получают одно и то же нормализованное значение `constraints.aspect_ratio`. Неизвестные aspect ratio везде одинаково приводятся к `16:9`.
+
+## Использование
 
 ### CLI
 
@@ -114,7 +106,7 @@ ratios fall back to `16:9` consistently across image and video providers.
 python3 -m scene_agent "Ночная сцена: герой идет по дождливой улице..."
 ```
 
-### Python API
+### API Python
 
 ```python
 from scene_agent.main import run
@@ -128,7 +120,7 @@ result = run(
 )
 ```
 
-The returned dict includes:
+Возвращаемый словарь включает:
 
 - `run_id`
 - `status`
@@ -140,9 +132,9 @@ The returned dict includes:
 - `segment_uris`
 - `reviews`
 
-## Runtime Layout
+## Структура runtime-артефактов
 
-Generated outputs are stored under:
+Сгенерированные файлы сохраняются в:
 
 ```text
 artifacts/
@@ -156,9 +148,9 @@ artifacts/
       *.png / *.mp4
 ```
 
-## Self-Hosted Prefect Target
+## Self-hosted-развёртывание Prefect
 
-The intended stable deployment topology is:
+Целевая стабильная схема развёртывания:
 
 - `postgres`
 - `redis`
@@ -166,21 +158,18 @@ The intended stable deployment topology is:
 - `prefect-services`
 - `prefect-worker`
 
-For lightweight local experimentation, Prefect can still run with SQLite, but production/self-hosted stable usage should use PostgreSQL and Redis.
+Для лёгких локальных экспериментов Prefect может запускаться с SQLite. Для стабильного production/self-hosted-использования нужно использовать PostgreSQL и Redis.
 
-## Tests
+## Тесты
 
 ```bash
 PYTHONPATH=src python3 -m pytest -q
 python3 -m compileall src
 ```
 
-## VBench2 API-Proxy Benchmark
+## VBench2 API-proxy-бенчмарк
 
-Benchmark code is isolated in root `benchmarking/`. The checked-in artifact
-bundle contains the final fixed 30-sample comparison set. Scores are API-proxy
-LLM-as-judge scores through `qwen/qwen3.6-flash`, not official GPU VBench2
-leaderboard scores.
+Код бенчмарка вынесен в корневую папку `benchmarking/`. Закоммиченный набор артефактов содержит финальную фиксированную выборку из 30 примеров. Оценки — это API-proxy LLM-as-a-judge через `qwen/qwen3.6-flash`, а не официальные GPU-оценки из leaderboard VBench2.
 
 ```bash
 cd ..
@@ -189,21 +178,16 @@ python3 benchmarking/run_sample_bench.py judge --model our --sample-id complex_p
 python3 benchmarking/generate_vbench2_samples.py --sample-id complex_plot_000 --allow-paid
 ```
 
-## Minimal Live Smoke
+## Минимальный live smoke
 
-The guarded smoke script checks direct Kling 3.0 Standard start/end-frame generation and segment edit with low-cost settings:
+Smoke-скрипт с защитой от случайного платного запуска проверяет прямую генерацию Kling 3.0 Standard по начальному и конечному кадру, а также segment edit в низкостоимостном режиме:
 
 ```bash
 python3 scripts/live_smoke_kling_minimal.py --dry-run --duration 4
 RUN_LIVE_SMOKE=1 python3 scripts/live_smoke_kling_minimal.py --duration 4
 ```
 
-For an end-to-end Prefect smoke, use a tiny run with `duration_sec=3.0`,
-`fps=12`, `num_keyframes=2`, `K_sb=3`, `K_vid=2`, and
-`run_options={"force_edit_segments": [0]}`. A successful public deployment
-shows a final-video link artifact and a final-video-poster image artifact in
-the Prefect UI; the same URLs should require auth outside an authenticated
-browser session.
+Для end-to-end Prefect smoke используйте маленький запуск с `duration_sec=3.0`, `fps=12`, `num_keyframes=2`, `K_sb=3`, `K_vid=2` и `run_options={"force_edit_segments": [0]}`. Успешное публичное развёртывание показывает в Prefect UI link-артефакт итогового видео и image-артефакт постера итогового видео. Те же URL должны требовать авторизацию вне уже аутентифицированной браузерной сессии.
 
 ```bash
 python3 scripts/live_smoke_prefect_minimal.py --dry-run

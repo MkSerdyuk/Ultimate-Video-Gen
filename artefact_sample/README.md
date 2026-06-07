@@ -1,20 +1,20 @@
-# Artefact Sample
+# Примеры артефактов
 
-This folder contains complete generation runs copied from the agent runtime artifacts.
+Эта папка содержит полные запуски генерации, скопированные из runtime-артефактов агента.
 
-Runs:
+Запуски:
 
-- `prefect-smoke-20260607-1`: simple one-segment smoke sample with two keyframes.
-- `artifact-sample-fisher-cat-simple-ru-10s-20260607`: 10-second two-segment sample from a simple Russian prompt, where a fisherman catches a fish and gives it to a cat that runs up to him in one scene without a camera-angle change.
+- `prefect-smoke-20260607-1`: простой smoke-пример из одного сегмента и двух опорных кадров.
+- `artifact-sample-fisher-cat-simple-ru-10s-20260607`: 10-секундный пример из двух сегментов по простому русскому промпту: рыбак ловит рыбу и отдаёт её прибежавшему коту, одна сцена без смены ракурса.
 
-Contents:
+Содержимое:
 
-- `world.json`: generated world package for the scene.
-- `storyboard.json`: structured storyboard with frames, segments, prompts, and continuity constraints.
-- `storyboards/`: human-readable storyboard markdown snapshot.
-- `*.png`: generated keyframe anchors.
-- `segments/`: generated video segments between keyframes.
-- `final_video_*.mp4`: stitched final video.
-- `reviews/`: storyboard and final video review outputs.
-- `reports/run-report.md`: compact run report.
-- `manifest.json`: persisted run manifest tying all artifacts together.
+- `world.json`: сгенерированное описание мира сцены.
+- `storyboard.json`: структурированный storyboard с кадрами, сегментами, prompts и ограничениями continuity.
+- `storyboards/`: человекочитаемый markdown-снимок storyboard.
+- `*.png`: сгенерированные опорные кадры.
+- `segments/`: видеосегменты между опорными кадрами.
+- `final_video_*.mp4`: склеенное итоговое видео.
+- `reviews/`: результаты storyboard review и final video review.
+- `reports/run-report.md`: краткий отчёт о запуске.
+- `manifest.json`: сохранённый manifest запуска, связывающий все артефакты.

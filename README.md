@@ -1,19 +1,18 @@
 # Ultimate Video Gen
 
-This repository contains two related pieces:
+Репозиторий содержит три основные части:
 
-- `video_scene_agent/`: the production video scene agent.
-- `benchmarking/`: a fixed sample benchmark harness and committed benchmark artifacts.
-- `artefact_sample/`: complete sample generation runs with world, storyboard,
-  keyframes, segment videos, final videos, reviews, and manifests.
+- `video_scene_agent/`: основной агент генерации видео.
+- `benchmarking/`: зафиксированный набор для сравнения пайплайна с внешними моделями.
+- `artefact_sample/`: сохранённые примеры полных запусков с миром, storyboard, опорными кадрами, сегментами, итоговыми видео, review и manifest-файлами.
 
-## Video Scene Agent
+## Агент генерации видео
 
-`video_scene_agent` is a Prefect-based Python package that turns a text brief into a short stitched video. The flow plans a scene, generates keyframes with OpenRouter image models, generates or repairs video segments with Kling, stitches segments with FFmpeg, and runs multimodal review through OpenRouter.
+`video_scene_agent` — Python-пакет на Prefect, который превращает текстовое описание сцены в короткое склеенное видео. Пайплайн планирует сцену, генерирует опорные кадры через OpenRouter, генерирует или ремонтирует видеосегменты через прямой API Kling 3.0 Omni Standard, склеивает сегменты через FFmpeg и выполняет мультимодальную проверку через OpenRouter.
 
-The main package code lives in `video_scene_agent/src/scene_agent/`. Generated runtime outputs are written under `video_scene_agent/artifacts/`, which is ignored by git.
+Основной код пакета находится в `video_scene_agent/src/scene_agent/`. Результаты live-запусков пишутся в `video_scene_agent/artifacts/`; эта папка не коммитится.
 
-Basic local setup:
+Базовая локальная установка:
 
 ```bash
 cd video_scene_agent
@@ -22,7 +21,7 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-Live generation requires `video_scene_agent/.env` with:
+Для live-генерации нужен файл `video_scene_agent/.env`:
 
 ```bash
 OPENROUTER_API_KEY=...
@@ -31,48 +30,47 @@ KLING_SECRET_KEY=...
 STORAGE_PATH=./artifacts
 ```
 
-Create it from the package template:
+Создать его можно из шаблона:
 
 ```bash
 cp video_scene_agent/.env.example video_scene_agent/.env
 ```
 
-All live commands in this repository use that same file. The benchmark scripts
-also load secrets from `video_scene_agent/.env`; there is no separate
-`benchmarking/.env`.
+Все live-команды в репозитории используют этот же файл. У benchmarking-скриптов нет отдельного `.env`; они тоже читают секреты из `video_scene_agent/.env`.
 
-Run the CLI:
+Запуск CLI:
 
 ```bash
 cd video_scene_agent
-PYTHONPATH=src python -m scene_agent.main "A short cinematic scene..."
+PYTHONPATH=src python -m scene_agent "Короткая кинематографичная сцена..."
 ```
 
-Run tests:
+Запуск тестов:
 
 ```bash
 cd video_scene_agent
 PYTHONPATH=src pytest
 ```
 
-## Benchmarking
+## Бенчмаркинг
 
-`benchmarking/` contains a small VBench2-like API-judge benchmark over a fixed 30-video sample set: 15 `Complex_Plot` prompts and 15 `Multi-View_Consistency` prompts. The committed artifact bundle includes videos for the current pipeline and comparison models, plus Qwen 3.6 Flash judge outputs.
+`benchmarking/` содержит небольшой VBench2-like бенчмарк через API-судью на фиксированной выборке из 30 видео: 15 запросов `Complex_Plot` и 15 запросов `Multi-View_Consistency`. В репозитории зафиксированы видео текущего пайплайна, сравниваемые внешние модели и оценки Qwen 3.6 Flash.
 
-The benchmark is intentionally not the official GPU VBench2 implementation. It uses an LLM-as-a-judge flow through OpenRouter video review, with the judge model fixed to `qwen/qwen3.6-flash`.
+Это не официальный GPU-запуск VBench2. Оценка реализована как LLM-as-a-judge через OpenRouter video review; модель судьи зафиксирована как `qwen/qwen3.6-flash`.
 
-See `benchmarking/README.md` for the artifact layout and commands.
+**Много примеров генерации именно нашего пайплайна** можно посмотреть в `benchmarking/artifacts/fixed30_qwen36/videos/our_pipeline/`. В соседних папках этого же набора лежат MP4-файлы внешних моделей на той же фиксированной выборке.
 
-## Artefact Sample
+Структура артефактов и команды описаны в `benchmarking/README.md`.
 
-`artefact_sample/` contains compact complete runs copied from the agent's
-runtime artifacts. The first is a simple one-segment smoke sample; the second is
-a 10-second, two-segment sample generated from a simple Russian prompt: a
-fisherman catches a fish and gives it to a cat that runs up to him, in one scene
-without a camera-angle change. These folders can be used to inspect generated
-world packages, storyboards, human-readable storyboard markdown, keyframe
-anchors, generated segments, stitched final videos, review outputs, reports,
-and manifests without running live generation.
+## Примеры артефактов
+
+`artefact_sample/` содержит компактные полные запуски, скопированные из runtime-артефактов агента. Первый пример — простой smoke-тест из одного сегмента. Второй пример — 10-секундная сцена из двух сегментов по русскому промпту: рыбак ловит рыбу и отдаёт её прибежавшему коту, одна сцена без смены ракурса.
+
+Эти папки позволяют посмотреть сгенерированные описания мира, storyboard, markdown-версию storyboard, опорные кадры, видеосегменты, итоговые видео, review-результаты, отчёты и manifest-файлы без live-генерации.
+
+## Лицензия
+
+Код распространяется по лицензии MIT. Текст лицензии находится в `LICENSE.md`.
 
 ## Отчет об использовании генеративного ИИ
 
